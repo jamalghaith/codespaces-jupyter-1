@@ -1,0 +1,329 @@
+\documentclass[12pt,a4paper]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{adjustbox} % For better scaling control
+\usepackage{siunitx}
+\usepackage{cleveref}
+\usepackage[parfill]{parskip}
+\usepackage{import}
+\usepackage{longtable}
+\pgfplotsset{compat=1.16} % Set PGFPlots compatibility version
+
+% Define mathdefault to fix PGF errors
+\def\mathdefault#1{#1}
+
+% Page setup
+\geometry{
+    left=1cm,
+    right=1cm,
+    top=2cm,
+    bottom=1cm,
+    headheight=14.5pt,
+    showframe=false
+}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Make chapter pages use fancy style too
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{\leftmark}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+% Chapter and section formatting
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Bachelor Thesis},
+    pdfauthor={Your Name},
+}
+
+% Document information
+\title{Your Thesis Title}
+\author{Your Name}
+\date{\today}
+
+% Custom commands
+\newcommand{\university}{University Of Leipzig}
+\newcommand{\department}{IOM Leipzig}
+\newcommand{\degree}{Bachelor of Science}
+\newcommand{\supervisor}{Dr.\ Jens Bauer}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+\centering
+\vspace*{5cm}
+
+{\huge \bfseries Graphite Angle Series-1 Report\par}
+\vspace{4cm}
+
+\includegraphics[width=0.32\textwidth]{Figures/GrapheneOS_logo.png}
+\vfill
+
+{\large by\par}
+{\Large Jamal Ghaith\par}
+\vspace{2cm}
+
+{\large \today\par}
+\vspace{2cm}
+\end{titlepage}
+
+\newpage
+
+% Table of contents
+\tableofcontents
+
+\newpage
+
+\section{AFM Plots}
+
+The following figures show the AFM images for the angle series, there are some extra samples not part of this angle series (but were used to optimized parameters) found in~\ref{app:additional-afm-images}. 
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.6.pgf}}
+    \caption{1.6 3 $\mu$m --- $\theta=0 \si{\degree}$}
+\end{subfigure}
+\hfill 
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.1.pgf}}
+    \caption{2.1 3 $\mu$m --- $\theta=10 \si{\degree}$}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.2.pgf}}
+    \caption{2.2 3 $\mu$m --- $\theta=20 \si{\degree}$}
+\end{subfigure}
+
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.4.pgf}}
+    \caption{2.4 3 $\mu$m --- $\theta=30 \si{\degree}$}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.5.pgf}}
+    \caption{2.5 3 $\mu$m --- $\theta=40 \si{\degree}$}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.6.pgf}}
+    \caption{2.6 3 $\mu$m --- $\theta=50 \si{\degree}$}
+\end{subfigure}
+
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.7.pgf}}
+    \caption{2.7 3$\mu$m (1) --- $\theta=60 \si{\degree}$}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.322\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.9.pgf}}
+    \caption{2.9 3 $\mu$m --- $\theta=80 \si{\degree}$}
+\end{subfigure}
+
+\caption{Selected AFM Images}
+\end{figure}
+\newpage
+This is the individual display of the 2.8 3 $\mu$m image at $\theta=70 \si{\degree}$, which provided the best visual results in terms of surface features we are looking for (the dots). A particle and pore analaysis was performed on this image:
+\begin{figure}[h!]
+\centering
+    \scalebox{0.7}{\import{Figures/AFMpgf/}{2.8.pgf}}
+    \caption{2.8 3 $\mu$m --- $\theta=70 \si{\degree}$}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/png/2.8ParticlePoreHighlighted.png}
+    \caption{2.8 3 $\mu$m --- $\theta=70 \si{\degree}$}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.5\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.8ParticlePore.pgf}}
+    \caption{Diameter distribution of particles and pores}
+\end{subfigure}
+\caption{Particle and Pore Analysis of Sample 2.8 --- 3 $\mu$m Image}\label{fig:particle-pore-analysis}
+\end{figure}
+
+The particle and pore analysis shows a peak at 20nm, which is too small for our purposes. There is most definitely some error here considering the size of AFM tip is about 10 nm; and the image we see is a convolution of the tip and the surface. 
+
+\newpage
+\section{Power Spectral Density Analysis}
+
+The figures in Appendix~\ref{app:additional-PASD-plots} show all the Power Spectral Density (PSD) plots for the angle series, calculated using the PSDCalc program. The one we are interested in is the 2.8 3 $\mu$m image at $\theta=70 \si{\degree}$, which is shown below:
+\begin{figure}[h!]  
+\centering
+    \import{Figures/pgf/}{2.8.pgf}
+\caption{Power Spectral Density of 2.8 3$\mu$m Image at $\theta=70 \si{\degree}$}
+\end{figure}
+
+The PSD plot shows a peak near  $4 \ {\si{\mu \m}}^{-1}$ which corresponds to a feature size of about 250 nm, which we do not see in~\Cref{fig:particle-pore-analysis}. Furthermore, a particle size of $20 \ \si{\nano \m}$ would correspond to a peak at $50 \ {\si{\mu \m}}^{-1}$, which is not visible in the PSD plot. Note that in full PSD plot, this value is actually included, but parts near the beginning and end of the plot are cut off in order to remove inaccuracies. At high values, tip size starts to play a role and we cannot trust the PSD anymore.
+
+All of this is all the more reason to increase particle size, which is what we want regardless. The ``trustable range'' of the PSD plot is between $\frac{4}{3} \ \si{\mu \m}^{-1}$ and $35 \ \si{\mu \m}^{-1}$, which means our particles have to be between $600 \si{\nano \m}$ and $29 \ \si{\nano \m}$ in size.
+
+\newpage
+
+\appendix
+\section{Additional AFM Images}\label{app:additional-afm-images}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.2.pgf}}
+    \caption{C200 1.2 20 $\mu$m (1)}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.2.pgf}}
+    \caption{C200 1.2 20 $\mu$m (2)}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.3.pgf}}
+    \caption{C200 1.3 20 $\mu$m}
+\end{subfigure}
+
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.3.pgf}}
+    \caption{C200 1.3 3 $\mu$m}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.5.pgf}}
+    \caption{C200 1.5 3 $\mu$m}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.6.pgf}}
+    \caption{C200 1.6 20 $\mu$m}
+\end{subfigure}
+
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{1.Unetched.pgf}}
+    \caption{C200 1-Unetched 20 $\mu$m}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.1.pgf}}
+    \caption{C200 2.1 20 $\mu$m}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+    \centering
+    \scalebox{0.325}{\import{Figures/AFMpgf/}{2.7.pgf}}
+    \caption{C200 2.7 3 $\mu$m (2)}
+\end{subfigure}
+
+\caption{Additional AFM Images}
+\end{figure}
+
+\newpage
+\section{Additional Isotropic Area Power Spectral Density Plots}\label{app:additional-PASD-plots}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/1.6.pgf}}
+    \caption{$\theta=0 \si{\degree}$}\label{fig:1-6}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.1.pgf}}
+    \caption{$\theta=10 \si{\degree}$}\label{fig:2-1}
+\end{subfigure}
+
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.2.pgf}}
+    \caption{$\theta=20 \si{\degree}$}\label{fig:2-2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.4.pgf}}
+    \caption{$\theta=30 \si{\degree}$}\label{fig:2-4}
+\end{subfigure}
+
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.5.pgf}}
+    \caption{$\theta=40 \si{\degree}$}\label{fig:2-5}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.6.pgf}}
+    \caption{$\theta=50 \si{\degree}$}\label{fig:2-6}
+\end{subfigure}
+
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.7.pgf}}
+    \caption{$\theta=60 \si{\degree}$}\label{fig:2-7}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \scalebox{0.5}{\input{Figures/pgf/2.9.pgf}}
+    \caption{$\theta=80 \si{\degree}$}\label{fig:2-9}
+\end{subfigure}
+
+\caption{Power Spectral Density Analysis Results}\label{fig:all-plots}
+\end{figure}
+
+\end{document}

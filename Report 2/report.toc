@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}AFM Plots}{2}{section.1}%
+\contentsline {section}{\numberline {2}Power Spectral Density Analysis}{4}{section.2}%
+\contentsline {section}{\numberline {A}Additional AFM Images}{5}{appendix.A}%
+\contentsline {section}{\numberline {B}Additional Isotropic Area Power Spectral Density Plots}{6}{appendix.B}%

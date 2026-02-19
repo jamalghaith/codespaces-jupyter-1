@@ -1,0 +1,441 @@
+\documentclass[12pt,a4paper]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern} % Use Latin Modern font
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{adjustbox} % For better scaling control
+\usepackage{siunitx}
+\usepackage{cleveref}
+\usepackage[parfill]{parskip}
+\usepackage{import}
+\usepackage{longtable}
+\pgfplotsset{compat=1.16} % Set PGFPlots compatibility version
+
+% Define mathdefault to fix PGF errors
+\def\mathdefault#1{#1}
+
+% Page setup - using same margins as your report
+\geometry{
+    left=1cm,
+    right=1cm,
+    top=2cm,
+    bottom=1cm,
+    headheight=14.5pt,
+    showframe=false
+}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Make chapter pages use fancy style too
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{\leftmark}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={AFM Analysis Results},
+    pdfauthor={AFM Data Analysis},
+}
+
+\title{AFM Analysis Results: Comprehensive Surface Characterization}
+\author{AFM Data Analysis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Results}
+
+\subsection{AFM Surface Topography and Particle Size Distribution Analysis}
+
+The following figures show the surface topography paired with their corresponding particle size distribution histograms:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_1_3mu_1.pgf}}
+        \caption{}\label{fig:afm_1a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_1_3mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_1b}
+    \end{subfigure}
+    \caption{Sample 1.1 --- 3 $\mu$m scan --- 1}\label{fig:sample_1_1_3mu_1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_1_30mu_1.pgf}}
+        \caption{}\label{fig:afm_2a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_1_30mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_2b}
+    \end{subfigure}
+    \caption{Sample 1.1 --- 30 $\mu$m scan --- 1}\label{fig:sample_1_1_30mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_1_30mu_2.pgf}}
+        \caption{}\label{fig:afm_3a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_1_30mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_3b}
+    \end{subfigure}
+    \caption{Sample 1.1 --- 30 $\mu$m scan --- 2}\label{fig:sample_1_1_30mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_2_3mu_1.pgf}}
+        \caption{}\label{fig:afm_4a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_2_3mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_4b}
+    \end{subfigure}
+    \caption{Sample 1.2 --- 3 $\mu$m scan --- 1}\label{fig:sample_1_2_3mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_2_3mu_2.pgf}}
+        \caption{}\label{fig:afm_5a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_2_3mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_5b}
+    \end{subfigure}
+    \caption{Sample 1.2 --- 3 $\mu$m scan --- 2}\label{fig:sample_1_2_3mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_2_30mu_1.pgf}}
+        \caption{}\label{fig:afm_6a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_2_30mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_6b}
+    \end{subfigure}
+    \caption{Sample 1.2 --- 30 $\mu$m scan --- 1}\label{fig:sample_1_2_30mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_2_30mu_2.pgf}}
+        \caption{}\label{fig:afm_7a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_2_30mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_7b}
+    \end{subfigure}
+    \caption{Sample 1.2 --- 30 $\mu$m scan --- 2}\label{fig:sample_1_2_30mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_3_3mu_1.pgf}}
+        \caption{}\label{fig:afm_8a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_3_3mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_8b}
+    \end{subfigure}
+    \caption{Sample 1.3 --- 3 $\mu$m scan --- 1}\label{fig:sample_1_3_3mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_3_3mu_2.pgf}}
+        \caption{}\label{fig:afm_9a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_3_3mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_9b}
+    \end{subfigure}
+    \caption{Sample 1.3 --- 3 $\mu$m scan --- 2}\label{fig:sample_1_3_3mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_3_30mu_1.pgf}}
+        \caption{}\label{fig:afm_10a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_3_30mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_10b}
+    \end{subfigure}
+    \caption{Sample 1.3 --- 30 $\mu$m scan --- 1}\label{fig:sample_1_3_30mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_3_30mu_2.pgf}}
+        \caption{}\label{fig:afm_11a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_3_30mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_11b}
+    \end{subfigure}
+    \caption{Sample 1.3 --- 30 $\mu$m scan --- 2}\label{fig:sample_1_3_30mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_4_3mu_1.pgf}}
+        \caption{}\label{fig:afm_12a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_4_3mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_12b}
+    \end{subfigure}
+    \caption{Sample 1.4 --- 3 $\mu$m scan --- 1}\label{fig:sample_1_4_3mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_4_3mu_2.pgf}}
+        \caption{}\label{fig:afm_13a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_4_3mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_13b}
+    \end{subfigure}
+    \caption{Sample 1.4 --- 3 $\mu$m scan --- 2}\label{fig:sample_1_4_3mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_4_30mu_1.pgf}}
+        \caption{}\label{fig:afm_14a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_4_30mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_14b}
+    \end{subfigure}
+    \caption{Sample 1.4 --- 30 $\mu$m scan --- 1}\label{fig:sample_1_4_30mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_4_30mu_2.pgf}}
+        \caption{}\label{fig:afm_15a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_4_30mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_15b}
+    \end{subfigure}
+    \caption{Sample 1.4 --- 30 $\mu$m scan --- 2}\label{fig:sample_1_4_30mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_6_3mu_1.pgf}}
+        \caption{}\label{fig:afm_16a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_6_3mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_16b}
+    \end{subfigure}
+    \caption{Sample 1.6 --- 3 $\mu$m scan --- 1}\label{fig:sample_1_6_3mu_1}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_6_3mu_2.pgf}}
+        \caption{}\label{fig:afm_17a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_6_3mu_2_histogram.pgf}}
+        \caption{}\label{fig:afm_17b}
+    \end{subfigure}
+    \caption{Sample 1.6 --- 3 $\mu$m scan --- 2}\label{fig:sample_1_6_3mu_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../AFMpgf/}{1_6_30mu_1.pgf}}
+        \caption{}\label{fig:afm_18a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../Histogrampgf/}{1_6_30mu_1_histogram.pgf}}
+        \caption{}\label{fig:afm_18b}
+    \end{subfigure}
+    \caption{Sample 1.6 --- 30 $\mu$m scan --- 1}\label{fig:sample_1_6_30mu_1}
+\end{figure}
+
+\newpage
+
+% \begin{figure}[h!]
+%     \centering
+%     \scalebox{0.5}{\import{../../AFMpgf/}{1_6_30mu_2.pgf}}
+%     \caption{Sample 1.6 --- 30 $\mu$m scan --- 2}\label{fig:sample_1_6_30mu_2}
+% \end{figure}
+
+% \newpage
+
+\subsection{Power Spectral Density Analysis}
+
+The PSD analysis provides insights into surface roughness characteristics across all samples:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../PASDpgf/}{pasd_1_1.pgf}}
+        \caption{}\label{fig:pasd_1_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../PASDpgf/}{pasd_1_2.pgf}}
+        \caption{}\label{fig:pasd_1_2}
+    \end{subfigure}
+
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../PASDpgf/}{pasd_1_3.pgf}}
+        \caption{}\label{fig:pasd_1_3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../PASDpgf/}{pasd_1_4.pgf}}
+        \caption{}\label{fig:pasd_1_4}
+    \end{subfigure}
+
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \scalebox{0.5}{\import{../../PASDpgf/}{pasd_1_6.pgf}}
+        \caption{}\label{fig:pasd_1_6}
+    \end{subfigure}
+
+    \caption{Combined Isotropic Power Spectral Density Analysis for All Samples}\label{fig:all_pasd}
+\end{figure}
+
+\end{document}

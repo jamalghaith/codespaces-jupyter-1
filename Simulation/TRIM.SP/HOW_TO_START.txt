@@ -1,0 +1,48 @@
+HOW TO START
+
+
+1. Extract the files trvmc95pc.exe and trimfe3.exe into the same folder.
+2. trvmc95pc.exe is the TRIM.SP program, trimfe3.exe is a windows frontend 
+   to produce input files for TRIM, trvmc95.inp and trvmc95.out are the 
+   TRIM input and output files, and trvmc95.text is a description of the 
+   structure of input and output files. 
+
+
+HOW TO CREATE AN INPUT FILE AND START CALCULATION
+
+1. USING AN EDITOR
+
+   Take the example input file to start from and replace the input 
+   variables following the instructions in trvmc95.text. Save the file as 
+   trvmc95.inp. Start TRIM from a DOS shell by simply typing "trvmc95pc". 
+   TRIM will produce the output file named trvmc95.out.
+
+2. USING trimfe3.exe
+
+   trimfe3.exe is a frontend to produce input files more conveniently, save 
+   them under different names, reload input files, save output files under 
+   custom names both, as *.out files and as *.dat. The latter format is 
+   intended for use with e.g. ORIGIN to view the most frequently used depth 
+   distributions.
+
+   trimfe3.exe, however, only allows to specify one target layer as opposed 
+   to up to three target layers, that TRIM can deal with.
+
+   trimfe3.exe should be rather self-explanatory. To set the input
+   parameters click the button "parameters". The abbreviations used are 
+   those described in trvmc95.text. 
+   Use "save input file" to give the input file a custom name. The file 
+   trvmc95.inp will be overwritten with each time you click "Start Trim 
+   calculation". 
+   To start TRIM.SP click "Start Trim calculation". After the calculation 
+   is finished several depth distributions are plotted. The output file can 
+   be saved either as text file (*.out) or as table (*.dat) by using the 
+   two save buttons left of the parameter button. The *.dat file only saves 
+   a selection of depth distributions!
+   You can also perform several TRIM runs with a series of input files by 
+   saving all the input files first and then running trimfe3.exe in batch 
+   mode.  
+
+IF YOU ENCOUNTER PROBLEMS OR HAVE QUESTIONS PLEASE DON’T HESITATE TO ASK.
+
+

@@ -1,0 +1,1192 @@
+*********************************
+** simulation input parameters **
+*********************************
+
+atomic number of projectile: 					z1 = 18.00
+mass (in amu) of projectile: 					m1 = 39.95
+energy of projectile (eV): 						e0 = 800.00
+angle of incidence (in degree) with respect to
+ the surface normal: 							alpha = 10.00
+cutoff energy of projectiles (eV): 				ef = 0.10
+surface binding energies for projectiles (eV): 	esb = 0.00
+sheath potential (eV): 							sheath = 2400.00
+number of projectiles: 							nh = 9999999
+initial random number: 							ri = 716381.00
+starting depth of projectile (A): 				x0 = 0.00
+depth to which recoils are followed: 			rd = 100.00
+depth interval for calculated depth
+ distributions (A): 							cw = 2.00
+correction factor to the firsov screening
+ length: 										ca = 1.00
+maximum order of weak (simultaneous) collisions
+ between projectiles and target atoms: 			kk0 = 2
+maximum order of weak (simultaneous) collisions
+ between target atoms: 							kk0r = 2
+inelastic energy loss model for projectiles: 	kdee1 = 3
+inelastic energy loss for target atoms: 		kdee2 = 3
+unknown: 0.00
+
+layer thickness (in A): dx(i)
+layer density (in g cm{-3}): rho(i)
+correction factor to the lindhard-scharff nonlocal inelastic energy
+ loss of the projectile: ck(i)
+layer   	dx     	rho 	ck
+  1  	10000.00	 2.25	1.00
+  2  	    0.00	 0.00	0.00
+  3  	    0.00	 0.00	0.00
+
+atomic number of target atoms (j<=5) in layer i: zt(i,j)
+layer\component 1 2 3 4 5
+1 6.00 0.00 0.00 0.00 0.00
+2 0.00 0.00 0.00 0.00 0.00
+3 0.00 0.00 0.00 0.00 0.00
+
+mass (in amu) of target atoms (j<=5) in layer i: mt(i,j)
+layer\component 1 2 3 4 5
+1 12.01 0.00 0.00 0.00 0.00
+2 0.00 0.00 0.00 0.00 0.00
+3 0.00 0.00 0.00 0.00 0.00
+
+concentration of target atoms (j<=5) in layer i: co(i,j)
+layer\component 1 2 3 4 5
+1 1.00 0.00 0.00 0.00 0.00
+2 0.00 0.00 0.00 0.00 0.00
+3 0.00 0.00 0.00 0.00 0.00
+
+surface binding energy of target atoms (j<=5) in layer i: sbe(i,j)
+layer\component 1 2 3 4 5
+1 7.41 0.00 0.00 0.00 0.00
+2 0.00 0.00 0.00 0.00 0.00
+3 0.00 0.00 0.00 0.00 0.00
+
+displacement energy of target atoms (j<=5) in layer i: ed(i,j)
+layer\component 1 2 3 4 5
+1 30.00 0.00 0.00 0.00 0.00
+2 0.00 0.00 0.00 0.00 0.00
+3 0.00 0.00 0.00 0.00 0.00
+
+bulk binding energy of target atoms (j<=5) in layer i: be(i,j)
+layer\component 1 2 3 4 5
+1 0.10 0.00 0.00 0.00 0.00
+2 0.00 0.00 0.00 0.00 0.00
+3 0.00 0.00 0.00 0.00 0.00
+
+
+**********************************
+** simulation output parameters **
+**********************************
+
+in the case of a maxwellian distribution:
+ion temperature: 								ti = 0.00
+adjustment factor for the projectile mass: 		zarg = 0.00
+adjustment factor for the sheath potential: 	velc = 0.00
+
+unknown: 0
+
+distance above the surface (x=0.), where an inelastic energy loss can be taken into account: hlm = 0.00
+distance above the surface (x=tt), where an inelastic energy loss can be taken into account: hlmt = 10000.00
+distance above the front surface, where collisions are taken into account: su = 3.50
+distance outside the backsurface, where collisions are taken into account: sut = 10003.50
+starting point above the surface: 				xc = -3.50
+total thickness - maximal investigated recoils depth: rt = tt-rd = 9900.00
+electronic energy loss outside the bulk: 		inel = 0
+number of layers: 								l = 1
+number of target species: 						lj = 1
+
+number how often the projectile loop is entered: nproj = 2406860
+number of backscattered projectiles which cannot overcome the surface barrier (esb): kib = 0
+number of transmitted projectiles which cannot overcome the surface barrier (esb): kit = 0
+maximum number of simultaneously processed target atoms in the vectorized target collision loop: maxa = 279
+number of times the target atom collision loop has to be passed: nall = 1492215651
+number of primary knockon atoms: 				npa = 125229655
+number of secondary knockon atoms: 				nsa = 814848017
+number of sputtered target atoms which cannot overcome the surface barrier (sbe): kis = 7500035
+number of transmission sputtered target atoms which cannot overcome the surface barrier (sbe): kist = 0
+
+implanted projectiles: 							iim = 9999990
+energy of all implanted projectiles (eV): 		eim = 8E+09
+reflected projectiles: 							ib = 9
+energy of all reflected projectiles (eV): 		eb = 33.34
+transmitted projectiles: 						it = 0
+energy of all transmitted projectiles (eV): 	et = 0
+backsputtered target atoms: 					ispa = 2523201
+energy of all backsputtered target atoms (eV): 	espa = 3.803E+07
+transmitted target atoms: 						ispat = 0
+energy of all transmitted target atoms (eV): 	espat = 0
+
+penetration of projectiles:
+                              	mean value  	variance     	skewness 	kurtosis	square root of variance
+depth                         	  21.91±0.00	   38.67± 0.02	0.37±0.00	2.95    	  6.22
+spread                        	   8.69±0.00	   21.47± 0.01	0.67±0.00	3.31    	  4.63
+pathlength                    	  26.42±0.00	   43.89± 0.02	0.30±0.00	2.87    	  6.62
+
+elastic loss                  	 760.37±0.00	  145.03								 12.04
+electronic loss               	  39.63±0.00	  145.03								 12.04
+
+unknown: 5.72
+nuclear energy loss           	  50.88±0.01	 5362.20± 1.66	3.06±0.00	14.23    	 73.23
+nuc.en.loss/weak collisions   	   4.38±0.00	    6.95± 0.00	0.67±0.00	2.88    	  2.64
+electronic energy loss        	   2.88±0.00	    3.21± 0.00	0.01±0.00	1.70    	  1.79
+nuc.en.loss/subthreshold coll.	  13.68±0.00	   60.40± 0.01	0.13±0.00	2.23    	  7.77
+
+number of implanted projectiles (in sample thickness?): iirp = 9999990
+(total relative number of implanted projectiles?): trirp = 1.00
+number of projectiles with pathlength (in whole sample?): iipl = 9999990
+unknown: 3.963E+08
+total electronic energy loss (ev): 				tion = 7.002E+09
+total nuclear energy loss (ev): 				tdmgn = 5.07E+09
+total defect producing energy (ev): 			tcasmo = 1.1E+09
+total nuclear energy loss smaller than the displacement energy (ev): tphon = 7.604E+09
+total nuclear energy loss (ev), (central collision + weak collisions): tdent = 5.432E-312
+
+particle reflection coefficient: 				rn = 0.00
+energy reflection coefficient: 					re = 0.00
+relative mean energy of backscattered projectiles: emeanr = 0.00
+mean energy of backscattered projectiles: 		emean = 3.70
+
+particle transmission coefficient: 				tn = 0.00
+energy transmission coefficient: 				te = 0.00
+relative mean energy of transmitted projectiles: tmeanr = 0.00
+mean energy of transmitted projectiles: 		emeant = 0.00
+
+backscattered projectiles:
+                              	mean value  	variance     	skewness 	kurtosis	square root of variance
+mean energy                   	   3.70±1.79	   28.84±21.68	2.11±1.24	6.09    	  5.37
+mean pathlength               	  24.48±0.95	    8.19± 2.48	0.40±0.50	1.82    	  2.86
+
+mean elastic loss             	 764.99±0.86	   60.59								  7.78
+mean electronic loss          	  31.31±0.63	   32.10								  5.67
+
+transmitted projectiles:
+                              	mean value  	variance     	skewness 	kurtosis	square root of variance
+mean energy                   	   0.00±0.00	    0.00± 0.00	0.00±0.00	0.00    	  0.00
+mean pathlength               	   0.00±0.00	    0.00± 0.00	0.00±0.00	0.00    	  0.00
+
+mean elastic loss             	   0.00±0.00	    0.00								  0.00
+mean electronic loss          	   0.00±0.00	    0.00								  0.00
+
+unknown: 0
+unknown: 192
+unknown: 5612
+
+implantation profile:
+
+depth [A]	implanted projectiles	norm.impl.proj.
+   0.0	       0	0.0000
+   2.0	       8	0.0000
+   4.0	     157	0.0000
+   6.0	    1932	0.0002
+   8.0	   20664	0.0021
+  10.0	  101054	0.0101
+  12.0	  279997	0.0280
+  14.0	  543437	0.0543
+  16.0	  831241	0.0831
+  18.0	 1073714	0.1074
+  20.0	 1217429	0.1217
+  22.0	 1249667	0.1250
+  24.0	 1171121	0.1171
+  26.0	 1015502	0.1016
+  28.0	  820439	0.0820
+  30.0	  614734	0.0615
+  32.0	  428959	0.0429
+  34.0	  278938	0.0279
+  36.0	  167114	0.0167
+  38.0	   94097	0.0094
+  40.0	   49167	0.0049
+  42.0	   23550	0.0024
+  44.0	   10511	0.0011
+  46.0	    4340	0.0004
+  48.0	    1513	0.0002
+  50.0	     506	0.0001
+  52.0	     159	0.0000
+  54.0	      27	0.0000
+  56.0	      10	0.0000
+  58.0	       3	0.0000
+  60.0	       0	0.0000
+  62.0	       0	0.0000
+  64.0	       0	0.0000
+  66.0	       0	0.0000
+  68.0	       0	0.0000
+  70.0	       0	0.0000
+  72.0	       0	0.0000
+  74.0	       0	0.0000
+  76.0	       0	0.0000
+  78.0	       0	0.0000
+  80.0	       0	0.0000
+  82.0	       0	0.0000
+  84.0	       0	0.0000
+  86.0	       0	0.0000
+  88.0	       0	0.0000
+  90.0	       0	0.0000
+  92.0	       0	0.0000
+  94.0	       0	0.0000
+  96.0	       0	0.0000
+  98.0	       0	0.0000
+ 100.0	       0	0.0000
+ 102.0	       0	0.0000
+ 104.0	       0	0.0000
+ 106.0	       0	0.0000
+ 108.0	       0	0.0000
+ 110.0	       0	0.0000
+ 112.0	       0	0.0000
+ 114.0	       0	0.0000
+ 116.0	       0	0.0000
+ 118.0	       0	0.0000
+ 120.0	       0	0.0000
+ 122.0	       0	0.0000
+ 124.0	       0	0.0000
+ 126.0	       0	0.0000
+ 128.0	       0	0.0000
+ 130.0	       0	0.0000
+ 132.0	       0	0.0000
+ 134.0	       0	0.0000
+ 136.0	       0	0.0000
+ 138.0	       0	0.0000
+ 140.0	       0	0.0000
+ 142.0	       0	0.0000
+ 144.0	       0	0.0000
+ 146.0	       0	0.0000
+ 148.0	       0	0.0000
+ 150.0	       0	0.0000
+ 152.0	       0	0.0000
+ 154.0	       0	0.0000
+ 156.0	       0	0.0000
+ 158.0	       0	0.0000
+ 160.0	       0	0.0000
+ 162.0	       0	0.0000
+ 164.0	       0	0.0000
+ 166.0	       0	0.0000
+ 168.0	       0	0.0000
+ 170.0	       0	0.0000
+ 172.0	       0	0.0000
+ 174.0	       0	0.0000
+ 176.0	       0	0.0000
+ 178.0	       0	0.0000
+ 180.0	       0	0.0000
+ 182.0	       0	0.0000
+ 184.0	       0	0.0000
+ 186.0	       0	0.0000
+ 188.0	       0	0.0000
+ 190.0	       0	0.0000
+ 192.0	       0	0.0000
+ 194.0	       0	0.0000
+ 196.0	       0	0.0000
+ 198.0	       0	0.0000
+ 200.0	       0	0.0000
+
+pathlength [A]	implanted projectiles
+   2.0	       0
+   4.0	       0
+   6.0	       0
+   8.0	      75
+  10.0	    3136
+  12.0	   27931
+  14.0	  108483
+  16.0	  269883
+  18.0	  500079
+  20.0	  755348
+  22.0	  980614
+  24.0	 1137677
+  26.0	 1203312
+  28.0	 1167490
+  30.0	 1048312
+  32.0	  873786
+  34.0	  678076
+  36.0	  489374
+  38.0	  325726
+  40.0	  200762
+  42.0	  114442
+  44.0	   60021
+  46.0	   30581
+  48.0	   14216
+  50.0	    6534
+  52.0	    2662
+  54.0	    1022
+  56.0	     309
+  58.0	     109
+  60.0	      21
+  62.0	       6
+  64.0	       3
+  66.0	       0
+  68.0	       0
+  70.0	       0
+  72.0	       0
+  74.0	       0
+  76.0	       0
+  78.0	       0
+  80.0	       0
+  82.0	       0
+  84.0	       0
+  86.0	       0
+  88.0	       0
+  90.0	       0
+  92.0	       0
+  94.0	       0
+  96.0	       0
+  98.0	       0
+ 100.0	       0
+ 102.0	       0
+ 104.0	       0
+ 106.0	       0
+ 108.0	       0
+ 110.0	       0
+ 112.0	       0
+ 114.0	       0
+ 116.0	       0
+ 118.0	       0
+ 120.0	       0
+ 122.0	       0
+ 124.0	       0
+ 126.0	       0
+ 128.0	       0
+ 130.0	       0
+ 132.0	       0
+ 134.0	       0
+ 136.0	       0
+ 138.0	       0
+ 140.0	       0
+ 142.0	       0
+ 144.0	       0
+ 146.0	       0
+ 148.0	       0
+ 150.0	       0
+ 152.0	       0
+ 154.0	       0
+ 156.0	       0
+ 158.0	       0
+ 160.0	       0
+ 162.0	       0
+ 164.0	       0
+ 166.0	       0
+ 168.0	       0
+ 170.0	       0
+ 172.0	       0
+ 174.0	       0
+ 176.0	       0
+ 178.0	       0
+ 180.0	       0
+ 182.0	       0
+ 184.0	       0
+ 186.0	       0
+ 188.0	       0
+ 190.0	       0
+ 192.0	       0
+ 194.0	       0
+ 196.0	       0
+ 198.0	       0
+ 200.0	       0
+
+depth distributions of energy loss mechanisms:
+
+depth [A]	electr. loss [eV]	nucl. loss[eV]	tot. nucl. loss [eV]	loss by defects [eV]	loss by phonons [eV]
+   2.0	         5.295E+07	         9.045E+08	         9.319E+08	         7.115E+08	         6.789E+07
+   4.0	          5.15E+07	         8.612E+08	         8.922E+08	         6.751E+08	         6.945E+07
+   6.0	         4.773E+07	         8.134E+08	         8.491E+08	         6.333E+08	         7.274E+07
+   8.0	         4.369E+07	         7.604E+08	         8.018E+08	         5.854E+08	         7.777E+07
+  10.0	         3.945E+07	         6.999E+08	         7.475E+08	         5.289E+08	         8.475E+07
+  12.0	         3.494E+07	         6.306E+08	          6.84E+08	         4.642E+08	         9.219E+07
+  14.0	         3.016E+07	         5.518E+08	         6.089E+08	         3.927E+08	         9.748E+07
+  16.0	         2.523E+07	         4.663E+08	         5.241E+08	         3.184E+08	         9.867E+07
+  18.0	         2.035E+07	         3.787E+08	         4.338E+08	         2.467E+08	          9.45E+07
+  20.0	         1.579E+07	         2.946E+08	          3.44E+08	         1.818E+08	         8.546E+07
+  22.0	         1.174E+07	         2.193E+08	          2.61E+08	         1.274E+08	         7.294E+07
+  24.0	         8.359E+06	         1.558E+08	         1.891E+08	         8.466E+07	          5.87E+07
+  26.0	         5.685E+06	         1.055E+08	         1.306E+08	         5.326E+07	         4.455E+07
+  28.0	         3.683E+06	           6.8E+07	         8.576E+07	         3.165E+07	          3.18E+07
+  30.0	          2.27E+06	         4.159E+07	         5.345E+07	         1.769E+07	         2.137E+07
+  32.0	         1.326E+06	         2.407E+07	         3.152E+07	         9.287E+06	         1.347E+07
+  34.0	         7.333E+05	         1.316E+07	         1.755E+07	         4.558E+06	          7.96E+06
+  36.0	         3.827E+05	         6.799E+06	         9.226E+06	         2.102E+06	         4.405E+06
+  38.0	          1.88E+05	         3.299E+06	         4.554E+06	         8.961E+05	         2.278E+06
+  40.0	         8.668E+04	         1.499E+06	         2.106E+06	         3.552E+05	         1.095E+06
+  42.0	         3.756E+04	         6.421E+05	         9.158E+05	         1.316E+05	         4.925E+05
+  44.0	         1.496E+04	           2.5E+05	         3.641E+05	         4.147E+04	         2.029E+05
+  46.0	              5487	         9.094E+04	         1.341E+05	         1.264E+04	          7.66E+04
+  48.0	              1833	         2.979E+04	         4.467E+04	              3275	         2.607E+04
+  50.0	             562.3	              9068	         1.372E+04	              1007	              7925
+  52.0	             156.8	              2569	              3872	             354.8	              2168
+  54.0	             37.27	               573	             872.3	             77.38	             485.2
+  56.0	             9.727	             142.5	             234.8	             29.15	             109.6
+  58.0	             1.662	             27.37	             44.28	                 0	             27.37
+  60.0	                 0	                 0	                 0	                 0	                 0
+  62.0	                 0	                 0	                 0	                 0	                 0
+  64.0	                 0	                 0	                 0	                 0	                 0
+  66.0	                 0	                 0	                 0	                 0	                 0
+  68.0	                 0	                 0	                 0	                 0	                 0
+  70.0	                 0	                 0	                 0	                 0	                 0
+  72.0	                 0	                 0	                 0	                 0	                 0
+  74.0	                 0	                 0	                 0	                 0	                 0
+  76.0	                 0	                 0	                 0	                 0	                 0
+  78.0	                 0	                 0	                 0	                 0	                 0
+  80.0	                 0	                 0	                 0	                 0	                 0
+  82.0	                 0	                 0	                 0	                 0	                 0
+  84.0	                 0	                 0	                 0	                 0	                 0
+  86.0	                 0	                 0	                 0	                 0	                 0
+  88.0	                 0	                 0	                 0	                 0	                 0
+  90.0	                 0	                 0	                 0	                 0	                 0
+  92.0	                 0	                 0	                 0	                 0	                 0
+  94.0	                 0	                 0	                 0	                 0	                 0
+  96.0	                 0	                 0	                 0	                 0	                 0
+  98.0	                 0	                 0	                 0	                 0	                 0
+ 100.0	                 0	                 0	                 0	                 0	                 0
+ 102.0	                 0	                 0	                 0	                 0	                 0
+ 104.0	                 0	                 0	                 0	                 0	                 0
+ 106.0	                 0	                 0	                 0	                 0	                 0
+ 108.0	                 0	                 0	                 0	                 0	                 0
+ 110.0	                 0	                 0	                 0	                 0	                 0
+ 112.0	                 0	                 0	                 0	                 0	                 0
+ 114.0	                 0	                 0	                 0	                 0	                 0
+ 116.0	                 0	                 0	                 0	                 0	                 0
+ 118.0	                 0	                 0	                 0	                 0	                 0
+ 120.0	                 0	                 0	                 0	                 0	                 0
+ 122.0	                 0	                 0	                 0	                 0	                 0
+ 124.0	                 0	                 0	                 0	                 0	                 0
+ 126.0	                 0	                 0	                 0	                 0	                 0
+ 128.0	                 0	                 0	                 0	                 0	                 0
+ 130.0	                 0	                 0	                 0	                 0	                 0
+ 132.0	                 0	                 0	                 0	                 0	                 0
+ 134.0	                 0	                 0	                 0	                 0	                 0
+ 136.0	                 0	                 0	                 0	                 0	                 0
+ 138.0	                 0	                 0	                 0	                 0	                 0
+ 140.0	                 0	                 0	                 0	                 0	                 0
+ 142.0	                 0	                 0	                 0	                 0	                 0
+ 144.0	                 0	                 0	                 0	                 0	                 0
+ 146.0	                 0	                 0	                 0	                 0	                 0
+ 148.0	                 0	                 0	                 0	                 0	                 0
+ 150.0	                 0	                 0	                 0	                 0	                 0
+ 152.0	                 0	                 0	                 0	                 0	                 0
+ 154.0	                 0	                 0	                 0	                 0	                 0
+ 156.0	                 0	                 0	                 0	                 0	                 0
+ 158.0	                 0	                 0	                 0	                 0	                 0
+ 160.0	                 0	                 0	                 0	                 0	                 0
+ 162.0	                 0	                 0	                 0	                 0	                 0
+ 164.0	                 0	                 0	                 0	                 0	                 0
+ 166.0	                 0	                 0	                 0	                 0	                 0
+ 168.0	                 0	                 0	                 0	                 0	                 0
+ 170.0	                 0	                 0	                 0	                 0	                 0
+ 172.0	                 0	                 0	                 0	                 0	                 0
+ 174.0	                 0	                 0	                 0	                 0	                 0
+ 176.0	                 0	                 0	                 0	                 0	                 0
+ 178.0	                 0	                 0	                 0	                 0	                 0
+ 180.0	                 0	                 0	                 0	                 0	                 0
+ 182.0	                 0	                 0	                 0	                 0	                 0
+ 184.0	                 0	                 0	                 0	                 0	                 0
+ 186.0	                 0	                 0	                 0	                 0	                 0
+ 188.0	                 0	                 0	                 0	                 0	                 0
+ 190.0	                 0	                 0	                 0	                 0	                 0
+ 192.0	                 0	                 0	                 0	                 0	                 0
+ 194.0	                 0	                 0	                 0	                 0	                 0
+ 196.0	                 0	                 0	                 0	                 0	                 0
+ 198.0	                 0	                 0	                 0	                 0	                 0
+ 200.0	                 0	                 0	                 0	                 0	                 0
+
+not described parameter set: esb(1..10) ??? surface binding energy ???
+
+                              	mean value  	variance         	skewness   	kurtosis	square root of variance
+surface binding energy: No.  1	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  2	  15.00±0.00	  248.00±   0.00	2.00±0.00	11.00    	 15.00
+surface binding energy: No.  3	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  4	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  5	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  6	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  7	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  8	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No.  9	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+surface binding energy: No. 10	   0.00±0.00	    0.00±   0.00	0.00±0.00	 0.00    	  0.00
+
+unknown: 0
+unknown: 640
+unknown: 36360
+
+
+
+electronic loss of species [eV]
+
+depth [A]	  C  (layer 1)  
+    2.0  	   5.295E+07
+    4.0  	    5.15E+07
+    6.0  	   4.773E+07
+    8.0  	   4.369E+07
+   10.0  	   3.945E+07
+   12.0  	   3.494E+07
+   14.0  	   3.016E+07
+   16.0  	   2.523E+07
+   18.0  	   2.035E+07
+   20.0  	   1.579E+07
+   22.0  	   1.174E+07
+   24.0  	   8.359E+06
+   26.0  	   5.685E+06
+   28.0  	   3.683E+06
+   30.0  	    2.27E+06
+   32.0  	   1.326E+06
+   34.0  	   7.333E+05
+   36.0  	   3.827E+05
+   38.0  	    1.88E+05
+   40.0  	   8.668E+04
+   42.0  	   3.756E+04
+   44.0  	   1.496E+04
+   46.0  	        5487
+   48.0  	        1833
+   50.0  	       562.3
+   52.0  	       156.8
+   54.0  	       37.27
+   56.0  	       9.727
+   58.0  	       1.662
+   60.0  	           0
+   62.0  	           0
+   64.0  	           0
+   66.0  	           0
+   68.0  	           0
+   70.0  	           0
+   72.0  	           0
+   74.0  	           0
+   76.0  	           0
+   78.0  	           0
+   80.0  	           0
+   82.0  	           0
+   84.0  	           0
+   86.0  	           0
+   88.0  	           0
+   90.0  	           0
+   92.0  	           0
+   94.0  	           0
+   96.0  	           0
+   98.0  	           0
+  100.0  	           0
+  102.0  	           0
+  104.0  	           0
+  106.0  	           0
+  108.0  	           0
+  110.0  	           0
+  112.0  	           0
+  114.0  	           0
+  116.0  	           0
+  118.0  	           0
+  120.0  	           0
+  122.0  	           0
+  124.0  	           0
+  126.0  	           0
+  128.0  	           0
+  130.0  	           0
+  132.0  	           0
+  134.0  	           0
+  136.0  	           0
+  138.0  	           0
+  140.0  	           0
+  142.0  	           0
+  144.0  	           0
+  146.0  	           0
+  148.0  	           0
+  150.0  	           0
+  152.0  	           0
+  154.0  	           0
+  156.0  	           0
+  158.0  	           0
+  160.0  	           0
+  162.0  	           0
+  164.0  	           0
+  166.0  	           0
+  168.0  	           0
+  170.0  	           0
+  172.0  	           0
+  174.0  	           0
+  176.0  	           0
+  178.0  	           0
+  180.0  	           0
+  182.0  	           0
+  184.0  	           0
+  186.0  	           0
+  188.0  	           0
+  190.0  	           0
+  192.0  	           0
+  194.0  	           0
+  196.0  	           0
+  198.0  	           0
+  200.0  	           0
+  total  	   3.963E+08
+
+
+nuclear loss of projectile to species [eV]
+
+depth [A]	  C  (layer 1)  
+    2.0  	   9.045E+08
+    4.0  	   8.612E+08
+    6.0  	   8.134E+08
+    8.0  	   7.604E+08
+   10.0  	   6.999E+08
+   12.0  	   6.306E+08
+   14.0  	   5.518E+08
+   16.0  	   4.663E+08
+   18.0  	   3.787E+08
+   20.0  	   2.946E+08
+   22.0  	   2.193E+08
+   24.0  	   1.558E+08
+   26.0  	   1.055E+08
+   28.0  	     6.8E+07
+   30.0  	   4.159E+07
+   32.0  	   2.407E+07
+   34.0  	   1.316E+07
+   36.0  	   6.799E+06
+   38.0  	   3.299E+06
+   40.0  	   1.499E+06
+   42.0  	   6.421E+05
+   44.0  	     2.5E+05
+   46.0  	   9.094E+04
+   48.0  	   2.979E+04
+   50.0  	        9068
+   52.0  	        2569
+   54.0  	         573
+   56.0  	       142.5
+   58.0  	       27.37
+   60.0  	           0
+   62.0  	           0
+   64.0  	           0
+   66.0  	           0
+   68.0  	           0
+   70.0  	           0
+   72.0  	           0
+   74.0  	           0
+   76.0  	           0
+   78.0  	           0
+   80.0  	           0
+   82.0  	           0
+   84.0  	           0
+   86.0  	           0
+   88.0  	           0
+   90.0  	           0
+   92.0  	           0
+   94.0  	           0
+   96.0  	           0
+   98.0  	           0
+  100.0  	           0
+  102.0  	           0
+  104.0  	           0
+  106.0  	           0
+  108.0  	           0
+  110.0  	           0
+  112.0  	           0
+  114.0  	           0
+  116.0  	           0
+  118.0  	           0
+  120.0  	           0
+  122.0  	           0
+  124.0  	           0
+  126.0  	           0
+  128.0  	           0
+  130.0  	           0
+  132.0  	           0
+  134.0  	           0
+  136.0  	           0
+  138.0  	           0
+  140.0  	           0
+  142.0  	           0
+  144.0  	           0
+  146.0  	           0
+  148.0  	           0
+  150.0  	           0
+  152.0  	           0
+  154.0  	           0
+  156.0  	           0
+  158.0  	           0
+  160.0  	           0
+  162.0  	           0
+  164.0  	           0
+  166.0  	           0
+  168.0  	           0
+  170.0  	           0
+  172.0  	           0
+  174.0  	           0
+  176.0  	           0
+  178.0  	           0
+  180.0  	           0
+  182.0  	           0
+  184.0  	           0
+  186.0  	           0
+  188.0  	           0
+  190.0  	           0
+  192.0  	           0
+  194.0  	           0
+  196.0  	           0
+  198.0  	           0
+  200.0  	           0
+  total  	   7.002E+09
+
+
+nuclear loss lower than displacement energy for species [eV]
+
+depth [A]	  C  (layer 1)  
+    2.0  	   6.789E+07
+    4.0  	   6.945E+07
+    6.0  	   7.274E+07
+    8.0  	   7.777E+07
+   10.0  	   8.475E+07
+   12.0  	   9.219E+07
+   14.0  	   9.748E+07
+   16.0  	   9.867E+07
+   18.0  	    9.45E+07
+   20.0  	   8.546E+07
+   22.0  	   7.294E+07
+   24.0  	    5.87E+07
+   26.0  	   4.455E+07
+   28.0  	    3.18E+07
+   30.0  	   2.137E+07
+   32.0  	   1.347E+07
+   34.0  	    7.96E+06
+   36.0  	   4.405E+06
+   38.0  	   2.278E+06
+   40.0  	   1.095E+06
+   42.0  	   4.925E+05
+   44.0  	   2.029E+05
+   46.0  	    7.66E+04
+   48.0  	   2.607E+04
+   50.0  	        7925
+   52.0  	        2168
+   54.0  	       485.2
+   56.0  	       109.6
+   58.0  	       27.37
+   60.0  	           0
+   62.0  	           0
+   64.0  	           0
+   66.0  	           0
+   68.0  	           0
+   70.0  	           0
+   72.0  	           0
+   74.0  	           0
+   76.0  	           0
+   78.0  	           0
+   80.0  	           0
+   82.0  	           0
+   84.0  	           0
+   86.0  	           0
+   88.0  	           0
+   90.0  	           0
+   92.0  	           0
+   94.0  	           0
+   96.0  	           0
+   98.0  	           0
+  100.0  	           0
+  102.0  	           0
+  104.0  	           0
+  106.0  	           0
+  108.0  	           0
+  110.0  	           0
+  112.0  	           0
+  114.0  	           0
+  116.0  	           0
+  118.0  	           0
+  120.0  	           0
+  122.0  	           0
+  124.0  	           0
+  126.0  	           0
+  128.0  	           0
+  130.0  	           0
+  132.0  	           0
+  134.0  	           0
+  136.0  	           0
+  138.0  	           0
+  140.0  	           0
+  142.0  	           0
+  144.0  	           0
+  146.0  	           0
+  148.0  	           0
+  150.0  	           0
+  152.0  	           0
+  154.0  	           0
+  156.0  	           0
+  158.0  	           0
+  160.0  	           0
+  162.0  	           0
+  164.0  	           0
+  166.0  	           0
+  168.0  	           0
+  170.0  	           0
+  172.0  	           0
+  174.0  	           0
+  176.0  	           0
+  178.0  	           0
+  180.0  	           0
+  182.0  	           0
+  184.0  	           0
+  186.0  	           0
+  188.0  	           0
+  190.0  	           0
+  192.0  	           0
+  194.0  	           0
+  196.0  	           0
+  198.0  	           0
+  200.0  	           0
+  total  	     1.1E+09
+
+
+unknown: 36360
+unknown: 640
+
+unknown: 640
+unknown: 480
+
+
+angular distributions of the polar exit angle
+
+cosine   	refl.project.	refl.project.	trans.projec.	trans.projec.	sputter.atoms	sputter.atoms	trans.sp.atms	trans.sp.atms
+interval 	abs. number  	fraction     	abs. number  	fraction     	abs. number  	fraction     	abs. number  	fraction     
+  0.05	              0	              0	              0	              0	           6641	        0.05264	              0	              0
+  0.10	              0	              0	              0	              0	          19779	         0.1568	              0	              0
+  0.15	              0	              0	              0	              0	          32866	         0.2605	              0	              0
+  0.20	              0	              0	              0	              0	          47223	         0.3743	              0	              0
+  0.25	              0	              0	              0	              0	          61917	         0.4908	              0	              0
+  0.30	              0	              0	              0	              0	          76880	         0.6094	              0	              0
+  0.35	              0	              0	              0	              0	          92942	         0.7367	              0	              0
+  0.40	              0	              0	              0	              0	         109455	         0.8676	              0	              0
+  0.45	              0	              0	              0	              0	         124601	         0.9876	              0	              0
+  0.50	              0	              0	              0	              0	         138301	          1.096	              0	              0
+  0.55	              1	          2.222	              0	              0	         150809	          1.195	              0	              0
+  0.60	              1	          2.222	              0	              0	         162689	           1.29	              0	              0
+  0.65	              1	          2.222	              0	              0	         172417	          1.367	              0	              0
+  0.70	              0	              0	              0	              0	         180314	          1.429	              0	              0
+  0.75	              0	              0	              0	              0	         185585	          1.471	              0	              0
+  0.80	              0	              0	              0	              0	         190216	          1.508	              0	              0
+  0.85	              1	          2.222	              0	              0	         191471	          1.518	              0	              0
+  0.90	              3	          6.667	              0	              0	         193234	          1.532	              0	              0
+  0.95	              1	          2.222	              0	              0	         192479	          1.526	              0	              0
+  1.00	              1	          2.222	              0	              0	         193382	          1.533	              0	              0
+
+
+unknown: 480
+unknown: 3200
+
+
+
+sputtered primary knock-on atoms, ion in
+
+      	  C  (layer 1)  
+  0.05	        1997
+  0.10	        5975
+  0.15	        9945
+  0.20	       14461
+  0.25	       19179
+  0.30	       23371
+  0.35	       28161
+  0.40	       32736
+  0.45	       37134
+  0.50	       40589
+  0.55	       42805
+  0.60	       44886
+  0.65	       45765
+  0.70	       45289
+  0.75	       44570
+  0.80	       43120
+  0.85	       40245
+  0.90	       38030
+  0.95	       35226
+  1.00	       32338
+
+
+sputtered secondary knock-on atoms, ion in
+
+      	  C  (layer 1)  
+  0.05	        4644
+  0.10	       13803
+  0.15	       22920
+  0.20	       32761
+  0.25	       42738
+  0.30	       53508
+  0.35	       64781
+  0.40	       76719
+  0.45	       87463
+  0.50	       97712
+  0.55	      108004
+  0.60	      117801
+  0.65	      126652
+  0.70	      135022
+  0.75	      141009
+  0.80	      147094
+  0.85	      151223
+  0.90	      155200
+  0.95	      157247
+  1.00	      161035
+
+
+sputtered primary knock-on atoms, ion out
+
+      	  C  (layer 1)  
+  0.05	           0
+  0.10	           0
+  0.15	           1
+  0.20	           0
+  0.25	           0
+  0.30	           0
+  0.35	           0
+  0.40	           0
+  0.45	           0
+  0.50	           0
+  0.55	           0
+  0.60	           0
+  0.65	           0
+  0.70	           0
+  0.75	           0
+  0.80	           0
+  0.85	           0
+  0.90	           1
+  0.95	           1
+  1.00	           3
+
+
+sputtered secondary knock-on atoms, ion out
+
+      	  C  (layer 1)  
+  0.05	           0
+  0.10	           1
+  0.15	           0
+  0.20	           1
+  0.25	           0
+  0.30	           1
+  0.35	           0
+  0.40	           0
+  0.45	           4
+  0.50	           0
+  0.55	           0
+  0.60	           2
+  0.65	           0
+  0.70	           3
+  0.75	           6
+  0.80	           2
+  0.85	           3
+  0.90	           3
+  0.95	           5
+  1.00	           6
+
+
+unknown: 3200
+unknown: 2880
+
+
+
+sputtered species per layer
+
+      	  C  (layer 1)  
+  0.05	        6641
+  0.10	       19779
+  0.15	       32866
+  0.20	       47223
+  0.25	       61917
+  0.30	       76880
+  0.35	       92942
+  0.40	      109455
+  0.45	      124601
+  0.50	      138301
+  0.55	      150809
+  0.60	      162689
+  0.65	      172417
+  0.70	      180314
+  0.75	      185585
+  0.80	      190216
+  0.85	      191471
+  0.90	      193234
+  0.95	      192479
+  1.00	      193382
+
+
+sputtered atoms from layer
+
+      	    layer  1   	    layer  2   
+  0.05	        6641	           0
+  0.10	       19779	           0
+  0.15	       32866	           0
+  0.20	       47223	           0
+  0.25	       61917	           0
+  0.30	       76880	           0
+  0.35	       92942	           0
+  0.40	      109455	           0
+  0.45	      124601	           0
+  0.50	      138301	           0
+  0.55	      150809	           0
+  0.60	      162689	           0
+  0.65	      172417	           0
+  0.70	      180314	           0
+  0.75	      185585	           0
+  0.80	      190216	           0
+  0.85	      191471	           0
+  0.90	      193234	           0
+  0.95	      192479	           0
+  1.00	      193382	           0
+
+
+
+fraction sputtered species
+
+      	  C  (layer 1)  
+  0.05	           0
+  0.10	           0
+  0.15	           0
+  0.20	           0
+  0.25	           0
+  0.30	           0
+  0.35	           0
+  0.40	           0
+  0.45	           0
+  0.50	           0
+  0.55	           0
+  0.60	           0
+  0.65	           0
+  0.70	           0
+  0.75	           0
+  0.80	           0
+  0.85	           0
+  0.90	           0
+  0.95	           0
+  1.00	           0
+
+
+fraction sputtered atoms from layer
+
+      	    layer  1   	    layer  2   
+  0.05	           0	           0
+  0.10	           0	           0
+  0.15	           0	           0
+  0.20	           0	           0
+  0.25	           0	           0
+  0.30	           0	           0
+  0.35	           0	           0
+  0.40	           0	           0
+  0.45	           0	           0
+  0.50	           0	           0
+  0.55	           0	           0
+  0.60	           0	           0
+  0.65	           0	           0
+  0.70	           0	           0
+  0.75	           0	           0
+  0.80	           0	           0
+  0.85	           0	           0
+  0.90	           0	           0
+  0.95	           0	           0
+  1.00	           0	           0
+
+
+
+unknown: 2880
+unknown: 2880
+
+
+
+transmission sputtered species per layer
+
+      	  C  (layer 1)  
+  0.05	           0
+  0.10	           0
+  0.15	           0
+  0.20	           0
+  0.25	           0
+  0.30	           0
+  0.35	           0
+  0.40	           0
+  0.45	           0
+  0.50	           0
+  0.55	           0
+  0.60	           0
+  0.65	           0
+  0.70	           0
+  0.75	           0
+  0.80	           0
+  0.85	           0
+  0.90	           0
+  0.95	           0
+  1.00	           0
+
+
+transmission sputtered atoms from layer
+
+      	    layer  1   	    layer  2   
+  0.05	           0	           0
+  0.10	           0	           0
+  0.15	           0	           0
+  0.20	           0	           0
+  0.25	           0	           0
+  0.30	           0	           0
+  0.35	           0	           0
+  0.40	           0	           0
+  0.45	           0	           0
+  0.50	           0	           0
+  0.55	           0	           0
+  0.60	           0	           0
+  0.65	           0	           0
+  0.70	           0	           0
+  0.75	           0	           0
+  0.80	           0	           0
+  0.85	           0	           0
+  0.90	           0	           0
+  0.95	           0	           0
+  1.00	           0	           0
+
+
+
+transmission fraction sputtered species
+
+      	  C  (layer 1)  
+  0.05	           0
+  0.10	           0
+  0.15	           0
+  0.20	           0
+  0.25	           0
+  0.30	           0
+  0.35	           0
+  0.40	           0
+  0.45	           0
+  0.50	           0
+  0.55	           0
+  0.60	           0
+  0.65	           0
+  0.70	           0
+  0.75	           0
+  0.80	           0
+  0.85	           0
+  0.90	           0
+  0.95	           0
+  1.00	           0
+
+
+transmission fraction sputtered atoms from layer
+
+      	    layer  1   	    layer  2   
+  0.05	           0	           0
+  0.10	           0	           0
+  0.15	           0	           0
+  0.20	           0	           0
+  0.25	           0	           0
+  0.30	           0	           0
+  0.35	           0	           0
+  0.40	           0	           0
+  0.45	           0	           0
+  0.50	           0	           0
+  0.55	           0	           0
+  0.60	           0	           0
+  0.65	           0	           0
+  0.70	           0	           0
+  0.75	           0	           0
+  0.80	           0	           0
+  0.85	           0	           0
+  0.90	           0	           0
+  0.95	           0	           0
+  1.00	           0	           0
+
+
+unknown: 2880
+unknown: 696
+
+
+
+backsputtered target atoms (for each species per layer)
+
+                    	  C  (layer 1)  
+sputter atom number 	     2523201
+sputter atom energy 	   3.803E+07
+sputtering yield    	      0.2523
+sputtered energy    	    0.004754
+rel. mean sp. energy	     0.01884
+mean energy sp.atoms	       15.07
+
+
+sputtering from layers
+
+                    	    layer  1   	    layer  2   	    layer  3   
+sputter atom number 	     2523201	           0	           0
+sputter atom energy 	   3.803E+07	           0	           0

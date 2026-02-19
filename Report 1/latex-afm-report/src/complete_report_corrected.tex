@@ -1,0 +1,411 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% Fix for mathdefault issues in PGF files
+\providecommand{\mathdefault}[1]{#1}
+
+% Graphics and figures
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+
+% Other useful packages
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+\title{AFM Analysis Results: Comprehensive Surface Characterization}
+\author{AFM Data Analysis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+This report presents a comprehensive analysis of Atomic Force Microscopy (AFM) data, including surface topography characterization, particle size distribution analysis, and Power Spectral Density (PSD) measurements.
+
+\section{Results}
+
+
+\subsection{AFM Surface Topography}
+
+The following figures show the surface topography of different samples:
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_1_3mu_1.pgf}}
+    \caption{Sample 1.1 -- 3 $\mu$m scan -- 1}
+    \label{fig:afm_1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_1_30mu_1.pgf}}
+    \caption{Sample 1.1 -- 30 $\mu$m scan -- 1}
+    \label{fig:afm_2}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_1_30mu_2.pgf}}
+    \caption{Sample 1.1 -- 30 $\mu$m scan -- 2}
+    \label{fig:afm_3}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_2_3mu_1.pgf}}
+    \caption{Sample 1.2 -- 3 $\mu$m scan -- 1}
+    \label{fig:afm_4}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_2_3mu_2.pgf}}
+    \caption{Sample 1.2 -- 3 $\mu$m scan -- 2}
+    \label{fig:afm_5}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_2_30mu_1.pgf}}
+    \caption{Sample 1.2 -- 30 $\mu$m scan -- 1}
+    \label{fig:afm_6}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_2_30mu_2.pgf}}
+    \caption{Sample 1.2 -- 30 $\mu$m scan -- 2}
+    \label{fig:afm_7}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_3_3mu_1.pgf}}
+    \caption{Sample 1.3 -- 3 $\mu$m scan -- 1}
+    \label{fig:afm_8}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_3_3mu_2.pgf}}
+    \caption{Sample 1.3 -- 3 $\mu$m scan -- 2}
+    \label{fig:afm_9}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_3_30mu_1.pgf}}
+    \caption{Sample 1.3 -- 30 $\mu$m scan -- 1}
+    \label{fig:afm_10}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_3_30mu_2.pgf}}
+    \caption{Sample 1.3 -- 30 $\mu$m scan -- 2}
+    \label{fig:afm_11}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_4_3mu_1.pgf}}
+    \caption{Sample 1.4 -- 3 $\mu$m scan -- 1}
+    \label{fig:afm_12}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_4_3mu_2.pgf}}
+    \caption{Sample 1.4 -- 3 $\mu$m scan -- 2}
+    \label{fig:afm_13}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_4_30mu_1.pgf}}
+    \caption{Sample 1.4 -- 30 $\mu$m scan -- 1}
+    \label{fig:afm_14}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_4_30mu_2.pgf}}
+    \caption{Sample 1.4 -- 30 $\mu$m scan -- 2}
+    \label{fig:afm_15}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_6_3mu_1.pgf}}
+    \caption{Sample 1.6 -- 3 $\mu$m scan -- 1}
+    \label{fig:afm_16}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_6_3mu_2.pgf}}
+    \caption{Sample 1.6 -- 3 $\mu$m scan -- 2}
+    \label{fig:afm_17}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_6_30mu_1.pgf}}
+    \caption{Sample 1.6 -- 30 $\mu$m scan -- 1}
+    \label{fig:afm_18}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../AFMpgf/1_6_30mu_2.pgf}}
+    \caption{Sample 1.6 -- 30 $\mu$m scan -- 2}
+    \label{fig:afm_19}
+\end{figure}
+
+
+\subsection{Particle Size Distribution Analysis}
+
+The histogram analysis reveals the distribution of particle diameters with statistical measures:
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_1_3mu_1_histogram.pgf}}
+    \caption{Sample 1.1 -- 3 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_1_30mu_1_histogram.pgf}}
+    \caption{Sample 1.1 -- 30 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_2}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_1_30mu_2_histogram.pgf}}
+    \caption{Sample 1.1 -- 30 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_3}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_2_3mu_1_histogram.pgf}}
+    \caption{Sample 1.2 -- 3 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_4}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_2_3mu_2_histogram.pgf}}
+    \caption{Sample 1.2 -- 3 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_5}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_2_30mu_1_histogram.pgf}}
+    \caption{Sample 1.2 -- 30 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_6}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_2_30mu_2_histogram.pgf}}
+    \caption{Sample 1.2 -- 30 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_7}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_3_3mu_1_histogram.pgf}}
+    \caption{Sample 1.3 -- 3 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_8}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_3_3mu_2_histogram.pgf}}
+    \caption{Sample 1.3 -- 3 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_9}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_3_30mu_1_histogram.pgf}}
+    \caption{Sample 1.3 -- 30 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_10}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_3_30mu_2_histogram.pgf}}
+    \caption{Sample 1.3 -- 30 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_11}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_4_3mu_1_histogram.pgf}}
+    \caption{Sample 1.4 -- 3 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_12}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_4_3mu_2_histogram.pgf}}
+    \caption{Sample 1.4 -- 3 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_13}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_4_30mu_1_histogram.pgf}}
+    \caption{Sample 1.4 -- 30 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_14}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_4_30mu_2_histogram.pgf}}
+    \caption{Sample 1.4 -- 30 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_15}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_6_3mu_1_histogram.pgf}}
+    \caption{Sample 1.6 -- 3 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_16}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_6_3mu_2_histogram.pgf}}
+    \caption{Sample 1.6 -- 3 $\mu$m scan -- 2 -- Histogram}
+    \label{fig:hist_17}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../Histogrampgf/1_6_30mu_1_histogram.pgf}}
+    \caption{Sample 1.6 -- 30 $\mu$m scan -- 1 -- Histogram}
+    \label{fig:hist_18}
+\end{figure}
+
+
+\subsection{Power Spectral Density Analysis}
+
+The PSD analysis provides insights into surface roughness characteristics:
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../PASDpgf/pasd_1_6.pgf}}
+    \caption{Sample 1.6 -- Combined Isotropic PASD}
+    \label{fig:pasd_1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../PASDpgf/pasd_1_3.pgf}}
+    \caption{Sample 1.3 -- Combined Isotropic PASD}
+    \label{fig:pasd_2}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../PASDpgf/pasd_1_2.pgf}}
+    \caption{Sample 1.2 -- Combined Isotropic PASD}
+    \label{fig:pasd_3}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../PASDpgf/pasd_1_1.pgf}}
+    \caption{Sample 1.1 -- Combined Isotropic PASD}
+    \label{fig:pasd_4}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{../../PASDpgf/pasd_1_4.pgf}}
+    \caption{Sample 1.4 -- Combined Isotropic PASD}
+    \label{fig:pasd_5}
+\end{figure}
+
+
+\section{Summary}
+
+This comprehensive analysis includes:
+\begin{itemize}
+    \item 19 AFM topography images
+    \item 18 particle size distribution histograms
+    \item 5 power spectral density analyses
+\end{itemize}
+
+The results provide detailed insights into surface characteristics, particle distributions, and roughness properties across multiple samples and scan sizes.
+
+\end{document}

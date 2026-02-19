@@ -1,0 +1,1041 @@
+c
+c      program trvmc
+c
+c      static trim.sp for reflection and sputtering of a
+c           multi-component target
+c
+c      w.eckstein   ipp/op   d-85748 garching   frg
+c
+c      vectorized version to run on a cray or vp-200
+c         (established at ipp garching and ipp nagoya)
+c
+c      the compilation on workstations must be done with double 
+c      precision (IBM : xlf -qautodbl=dblpad)
+c
+c      calculated data on disc
+c
+c
+c
+c      program description   november 1995
+c      see w.eckstein , computer simulation of ion-solid interactions,
+c                       springer series in material science, vol.10,
+c                       springer, heidelberg, berlin 1991
+c
+c
+c      input data (see table 6.1 in book above)
+c
+c      1. record [100 format(2F7.2,1F12.2,5F9.2)]
+c      z1      atomic number of projectile
+c      m1      mass (in amu) of projectile
+c      e0      energy of projectile (in ev)
+c              if e0.gt.0. the projectile has the fixed
+c              energy e0
+c              if e0.lt.0. a maxwellian velocity distribution for
+c              the projectile is assumed with an ion
+c              temperature ti=-e0
+c              if e0.lt.0.and alpha.lt.0. a maxwellian energy 
+c              distribution for the projectile is assumed with an ion 
+c              temperature ti=-e0
+c      alpha   angle of incidence (in degree) with respect to the
+c              surface normal
+c              if alpha.ge.0. the projectile impinges at the fixed
+c              angle of incidence alpha
+c              if alpha.gt.90. the projectile starts inside the solid
+c              with an angle alpha (x0 should be larger than 0.)
+c              if alpha.eq.-1. a random distribution of the projectile
+c              is assumed
+c              if alpha.lt.-2. a cosine distribution for the projectile
+c              is assumed
+c      ef      cutoff energy of projectiles (in ev)
+c              ef must be larger than zero
+c      esb     surface binding energies for projectiles (in ev)
+c      sheath  sheath potential (in ev)
+c              typically 3kT : sheath = 3 |e0|
+c      erc     recoil cutoff energy; it is usually equal to the 
+c              surface binding energy (sbe); it can be applied to 
+c              cases, where erc.gt.sbe
+c
+c      2. record [101 format(I9,1F8.0,1F7.2,1F7.0,2F7.2,6I4,I3)]
+c      nh      number of projectiles
+c      ri      initial random number
+c              necessary for an exact repetition of a calculation
+c      x0      starting depth of projectile (in a)
+c              if x0 is zero or negative the projectile starts at
+c              x=-su=-2.*pmax. the uppermost target atoms are at
+c              x=0. they do not form a complete layer, they are
+c              distributed randomly
+c      rd      depth to which recoils are followed
+c              rd = 50 usually sufficient for sputtering if the 
+c              projectile energy is not too high
+c              rd = 100 cw for following the full cascade
+c      cw      depth interval for calculated depth distributions (in A)
+c      ca      correction factor to the firsov screening length
+c              for collisions between projectile and target atom
+c              (only for application of moliere-potential)
+c              usually ca = 1.00
+c      kk0     maximum order of weak (simultaneous) collisions
+c              between projectiles and target atoms. kk0 must be
+c              between 0 and 4 (0 means no weak collisions included)
+c      kk0r    maximum order of weak (simultaneous) collisions bet-
+c              ween target atoms. kk0r must be between 0 and 4
+c      kdee1   inelastic energy loss model for projectiles
+c              =1   nonlocal, lindhard-scharff
+c              =2   local, oen-robinson
+c              =3   equipartition of 1 and 2
+c              =4   nonlocal, andersen-ziegler tables for hydrogen
+c              =5   nonlocal, ziegler tables for helium
+c      kdee2   inelastic energy loss for target atoms
+c              =1   nonlocal, lindhard-scharff
+c              =2   local, oen-robinson
+c              =3   equipartition of 1 and 2
+c      ipot    interaction potential between projectile and target atom
+c              =1   krypton-carbon potential
+c              =2   moliere potential
+c              =3   ziegler-biersack-littmark potential
+c      ipotr   interaction potential between target atoms
+c              =1   krypton-carbon potential
+c              =2   moliere potential
+c              =3   ziegler-biersack-littmark potential
+c      irl     =0   no recoils are generated (no sputtering); to speed
+c                   up the calculation if only ranges are of interest
+c
+c      3. record(for each of three layers) [102 format(3F9.2,6F7.2)]
+c      dx(i)   layer thickness (in A)
+c      rho(i)  layer density (in g cm{-3})
+c      ck(i)   correction factor to the lindhard-scharff nonlocal
+c              inelastic energy loss of the projectile
+c
+c      records 4 - 14 appear three times for each of the three
+c      possible layers
+c
+c      4. record [103 format(5F9.4)]
+c      z(i,j)  atomic number of target atoms (j<=5) in layer i
+c
+c      5. record [103 format(5F9.4)]
+c      m(i,j)  mass (in amu) of target atoms (j<=5) in layer i
+c
+c      6. record [103 format(5F9.4)]
+c      c(i,j)  concentration of target atoms (j<=5) in layer i
+c
+c      7. record [103 format(5F9.4)]
+c      sbe(i,j)  surface binding energy of target atoms (j<=5)
+c                in layer i
+c
+c      8. record [103 format(5F9.4)]
+c      ed(i,j)  displacement energy of target atoms (j<=5) in layer i
+c
+c      9. record [103 format(5F9.4)]
+c      be(i,j)  bulk binding energy of target atoms (j<=5) in layer i
+c               usually always zero
+c
+c      10.-14.record    constants for the nonlocal inelastic energy
+c                       loss given by the andersen ziegler tables for
+c                       hydrogen or by the ziegler tables for helium
+c      10. record [107 format(5F12.6)]
+c      ch1(i,j) value A-1 of the ziegler tables
+c      11. record [107 format(5F12.6)]
+c      ch2(i,j) value A-2 of the ziegler tables
+c      12. record [107 format(5F12.6)]
+c      ch3(i,j) value A-3 of the ziegler tables
+c      13. record [107 format(5F12.6)]
+c      ch4(i,j) value A-4 of the ziegler tables
+c      14. record [107 format(5F12.6)]
+c      ch5(i,j) value A-5 of the ziegler tables
+c
+c
+c
+c      additional remarks
+c
+c      tt      target thickness should be chosen larger than the
+c              range of projectiles if transmission is not of
+c              interest
+c
+c      ed      for sputtering and backscattering calculations ed is
+c              not of importance, only in determination of damage
+c              profiles. ed is of the order of 30 ev
+c
+c      sheath  a sheath potential is only used for a maxwellian
+c              distribution of projectiles (e0.lt.0.)
+c
+c      ef      for low projectile energies (lt 1000 ev) and esb=0.
+c              ef should be of the order of 0.2 ev. with increasing
+c              energy ef can be increased to save computing time,
+c              but not above sbe (for sputtering data)
+c
+c      ca      the use of ca.ne.1 is only reasonable for the            
+c              application of the moliere potential
+c
+c      ri      with the same initial random number ri the calculation
+c              will be exactly reproduced if nothing has been changed
+c
+c      esb     this value is zero for the noble gases but esb should
+c              be larger than zero if the projectile is an active
+c              chemically species. esb=sbe for selfsputtering cal-
+c              culations
+c
+c      be      this value should be taken as zero (see j.p.biersack,
+c              w.eckstein  appl.phys.34(1984)73)
+c
+c      sbe     the heat of sublimation should be used
+c
+c      kk0     usually kk0=2 is used. only for very heavy particles
+c              kk0 may be increased to 3 or even 4 but on the ex-
+c              pense of increasing computing time
+c
+c      kk0r    the same applies as for kk0
+c
+c      kdee1   usually kdee1=3 is used. kdee1=1,2,or 3 can only be
+c              used at energies below the stopping power maximum.
+c              for hydrogen kdee1=4 must be used for projectile
+c              energies above 10 kev, for helium kdee1=5 must be
+c              used for energies above 50 kev
+c
+c      kdee2   usually kdee2=3 is used. the stopping power maximum
+c              for heavy atoms is well above 100 kev, so that only
+c              kdee2=1,2,and 3 is available
+c
+c
+c
+c      output data
+c
+c      calculated constants
+c      in the case of a maxwellian distribution three values
+c      are given
+c      ti      ion temperature
+c      zarg    adjustment factor for the projectile mass
+c      velc    adjustment factor for the sheath potential
+c
+c      hlm     distance above the surface (x=0.) , where an inelastic
+c              energy loss can be taken into account. usually
+c              hlm=0., but if inel.ne.0 then hlm=-.5*lm
+c      hlmt    distance above the surface (x=tt) , where an inelastic
+c              energy loss can be taken into account. usually
+c              hlmt=tt, but if inel.ne.0 then hlmt=tt+0.5*lm
+c      su1     su=2.*pmax(1)  
+c      su2     su=pmax(1)*(1.kk0) 
+c      sur     su=pmax(1)*(1.kk0r)
+c      su      su=max(su1,su2,sur) , distance above the front surface, where
+c                                    collisions are taken into account
+c      sut     sut=tt+su , su calculated with pmax(l)
+c                          distance outside the backsurface, where
+c                          collisions are taken into account
+c      xc      xc=-su , starting point above the surface
+c      rt      rt=tt-rd , see rd
+c      inel    inel=0 : no electronic energy loss outside the bulk
+c              inel=1 : electronic energy loss outside the bulk for a 
+c                       distance 0.5*lm , see hlm and hlmt
+c      l       number of layers
+c      lj      number of target species
+c
+c      values for each layer
+c      eps0(i) reduced projectile energy
+c      z2(i)   mean atomic number of layer i
+c      m2(i)   mean atomic mass of layer i
+c      arho(i) density (atoms/A**3})
+c      lm(i)   mean distance between collisions (A)
+c      pmax(i) maximum impact parameter (A)
+c      asig(i) constant for inelastic energy loss (atoms/A**2)
+c      sb(i)   mean surface binding energy of layer i
+c      xx(i)target thickness (A) of layer i
+c      n(i)    number of target species in layer i
+c      a1(i)   screening length for projectiles
+c      kor1(i) constant in the local oen-robinson inelastic energy
+c              loss for projectiles
+c      a(i)    screening length for target atoms
+c      kor(i)  constant in the local oen-robinson inelastic energy
+c              loss for target atoms
+c
+cc     f1      constant to transfer the energy of a projectile into
+cc             a reduced energy (eps)
+cc     f(i,j)  constant to transfer the energy of a target atom into
+cc             a reduced energy (epsr)
+cc     ec      maximum transferable energy between projectile and
+cc             target atom
+c      sfe     minimum of the mean surface binding energies of 
+c              first and last layer (l=3); for one layer (l=1) 
+c              sfe=sb(1). sb(l) is the mean binding energy of layer (l)
+c
+c      values giving information about some loops in the calculation
+c      nproj   number how often the projectile loop is entered
+c      kib     number of backscattered projectiles which cannot overcome
+c              the surface barrier (esb)
+c      kit     number of transmitted projectiles which cannot overcome
+c              the surface barrier (esb)
+c      maxa    maximum number of simultaneously processed target atoms
+c              in the vectorized target collision loop
+c      nall    number of times the target atom collision loop has to
+c              be passed
+c      npa     number of primary knockon atoms
+c      nsa     number of secondary knockon atoms
+c      kis     number of sputtered target atoms which cannot overcome
+c              the surface barrier (sbe)
+c      kist    number of transmission sputtered target atoms which
+c              cannot overcome the surface barrier (sbe)
+c
+c
+c      calculated results
+c
+c      iim     number of transmitted projectiles
+c      eim     energy of all transmitted projectiles
+c      ib      number of reflected projectiles
+c      eb      energy of all reflected projectiles
+c      it      number of transmitted projectiles
+c      et      energy of all transmitted projectiles
+c      ibsp    number of backsputtered target atoms
+c      ebsp    energy of all backsputtered target atoms
+c      itsp    number of transmission sputtered target atoms
+c      etsp    energy of all transmission sputtered target atoms
+c
+c      projectiles
+c      avcsum  mean number of collisions
+c      avcdis  mean number of collisions
+c                   (transferred energy > displacement energy)
+c      avcsms  mean number of collisions
+c                   (transferred energy > mean surface binding energy)
+c
+c      penetration of projectiles
+c
+c      fix0    mean penetration depth , 1. moment
+c      sex     variance of the depth distribution
+c      thx     skewness of the depth distribution
+c      fox     kurtosis of the depth distribution
+c      sigmax  square root of the variance
+c      dfix0   error of mean depth
+c      dsex    error of the variance
+c      dthx    error of the skewness
+c
+c      fir0    mean lateral spread of the penetration
+c      ser     variance of the spread distribution
+c      thr     skewness of the spread distribution
+c      for     kurtosis of the spread distribution
+c      sigmar  square root of the variance
+c      dfir0   error of mean spread
+c      dser    error of the variance
+c      dthr    error of the skewness
+c
+c      fip0    mean pathlength
+c      sep     variance of the pathlength distribution
+c      thp     skewness of the pathlength distribution
+c      fop     kurtosis of the pathlength distribution
+c      sigmap  square root of the variance
+c      dfip0   error of mean pathlength
+c      dsep    error of the variance
+c      dthp    error of the skewness
+c
+c      avnli   mean elastic loss
+c      vanli   variance of the elastic loss distribution
+c      signli  square root of the variance
+c      dfinli  error in the mean elastic loss
+c
+c      avili   mean electronic loss
+c      vaili   variance of the electronic loss distribution
+c      sigili  square root of the variance
+c      dfiili  error in the mean electronic loss
+c
+c      fie0    mean nuclear energy loss
+c      see     variance of the nuclear energy loss distribution
+c      the     skewness of the nuclear energy loss distribution
+c      foe     kurtosis of the nuclear energy loss distribution
+c      sigmae  square root of the variance
+c      dfie0   error of mean nuclear energy loss
+c      dsee    error of the variance
+c      dthe    error of the skewness
+c
+c      fiw0    mean nuclear energy loss in weak collisions
+c      sew     variance
+c      thw     skewness
+c      fow     kurtosis
+c      sigmaw  square root of the variance
+c      dfiw0   error of mean
+c      dsew    error of the variance
+c      dthw    error of the skewness
+c
+c      fii0    mean electronic energy loss
+c      sei     variance
+c      thi     skewness
+c      foi     kurtosis
+c      sigmai  square root of the variance
+c      dfii0   error of mean
+c      dsei    error of the variance
+c      dthi    error of the skewness
+c
+c      fis0    mean nuclear energy loss in subthreshold collisions
+c      ses     variance
+c      ths     skewness
+c      fos     kurtosis
+c      sigmas  square root of the variance
+c      dfis0   error of mean
+c      dses    error of the variance
+c      dths    error of the skewness
+c
+c      x1sd    1.moment of the penetration depth distribution
+c      x2sd    2.moment of the penetration depth distribution
+c      x3sd    3.moment of the penetration depth distribution
+c      x4sd    4.moment of the penetration depth distribution
+c      x5sd    5.moment of the penetration depth distribution
+c      x6sd    6.moment of the penetration depth distribution
+c
+c      recoiles created by recoils normalized to the number of
+c      projectiles (hn)
+c      acsumr  mean number of collisions
+c      acdisr  mean number of collisions
+c                   (transferred energy > displacement energy)
+c      acsber  mean number of collisions
+c                   (transferred energy > mean surface binding energy)
+c
+c      recoiles created by recoils normalized to the number of
+c      knockons (npa+nsa)
+c      acsur   mean number of collisions
+c      acdir   mean number of collisions
+c                   (transferred energy > displacement energy)
+c      acsbr   mean number of collisions
+c                   (transferred energy > mean surface binding energy)
+c      acdr11  mean number of collisions between species 1 and 1 in
+c              layer 1 (transferred energy > displacement energy)
+c      acdr12  mean number of collisions between species 1 and 2 in
+c              layer 1 (transferred energy > displacement energy)
+c      acdr21  mean number of collisions between species 2 and 1 in
+c              layer 1 (transferred energy > displacement energy)
+c      acdr22  mean number of collisions between species 2 and 2 in
+c              layer 1 (transferred energy > displacement energy)
+c
+c      depth distributions (projectiles)
+c      d1,d2     lower and upper limit of depth interval
+c                100 intervals, in steps of cw (in A)
+c      irp(i)    number of implanted projectiles in interval i
+c                , 'particles'
+c      rirp(i)   implantation profile normalized to all implanted
+c                projectiles (norm.distr) , 'norm.depth'
+c      ipl(i)    number of projectiles with pathlength in interval i
+c                , 'pathlength'
+c      ion(i)    electronic energy loss (ev) , 'inloss'
+c      dent(i)   total nuclear energy loss (ev), (central collision +
+c                weak collisions) , 'teloss'
+c      dmgn(i)   nuclear energy loss (ev), (central collision only)
+c                , 'elloss'
+c      elgd(i)   nuclear energy loss (ev) larger than the displacement
+c                energy ed (central collision only) , 'damage'
+c      phon(i)   nuclear energy loss smaller than the displacement
+c                energy (ev), energy into phonons , 'phonon'
+c      casmot(i) defect producing energy (ev)  (see biersack and
+c                haggmark nim 174 (1980) 257) , 'cascad'
+c      icdt(i)   number of displacements (collisions gt ed) , 'dpa'
+c      ele(i,j)  nuclear energy loss of projectile to species j 
+c                (central collision only)
+c      eli(i,j)  electronic energy loss of species j
+c      eld(i,j)  nuclear energy loss larger than the displacement
+c                energy for projectiles to species j 
+c                (central collision only)
+c      elp(i,j)  nuclear energy loss lower than the displacement
+c                energy for species j (central collision only)
+c      icd(i,j)  number of displacements of species j
+c 
+c      depth distributions (recoils)
+c      ionr(i)   inelastic energy loss (ev) by target atoms , 'inloss' 
+c      dentr(i)  total nuclear energy loss (ev) , (central collision +
+c                weak collisions) , 'teloss'
+c      dmgnr(i)  elastic energy loss (ev) by target atoms (central
+c                collisions only) , 'elloss'
+c      eler(i,j) nuclear energy loss of recoils to species j
+c                (central collision only)
+c      elir(i,j) electronic energy loss of species j
+c      eldr(i,j) nuclear energy loss larger than the displacement
+c                energy for species j (central collision only)
+c      elpr(i,j) nuclear energy loss lower than the displacement
+c                energy for species j (central collision only)
+c      icdr(i,j) number of displacements of species j
+c      icdiri(i,j,k) number of displacements of species k by species j
+c
+c                the last line gives the sum over the distributions
+c
+c
+c      backscattered projectiles
+c
+c      rn      particle reflection coefficient
+c      emean   mean energy of backscattered projectiles
+c      emeanr  relative mean energy of backscattered projectiles
+c      re      energy reflection coefficient
+c
+c      fib0    mean energy of backscattered projectiles
+c      seb     variance
+c      thb     skewness
+c      fob     kurtosis
+c      sigmab  square root of the variance
+c      dfib0   error of mean
+c      dseb    error of the variance
+c      dthb    error of the skewness
+c
+c      fipb0   mean pathlength of backscattered projectiles
+c      sepb    variance
+c      tphb    skewness
+c      fpob    kurtosis
+c      sigmpb  square root of the variance
+c      dfipb0  error of mean
+c      dsepb   error of the variance
+c      dthpb   error of the skewness
+c
+c      avnlb   mean elastic loss
+c      vanlb   variance of the elastic loss distribution
+c      signlb  square root of the variance
+c      dfinlb  error in the mean elastic loss
+c
+c      avilb   mean electronic loss
+c      vailb   variance of the electronic loss distribution
+c      sigilb  square root of the variance
+c      dfiilb  error in the mean electronic loss
+c
+c      eb1b    1.moment of the energy distr. of backsc. proj.
+c      eb2b    2.moment of the energy distr. of backsc. proj.
+c      eb3b    3.moment of the energy distr. of backsc. proj. 
+c      eb4b    4.moment of the energy distr. of backsc. proj.
+c      eb5b    5.moment of the energy distr. of backsc. proj. 
+c      eb6b    6.moment of the energy distr. of backsc. proj.
+c
+c      eb1bl   1.logarithmic moment of the energy distr.
+c      eb2bl   2.logarithmic moment of the energy distr. 
+c      eb3bl   3.logarithmic moment of the energy distr. 
+c      eb4bl   4.logarithmic moment of the energy distr. 
+c      eb5bl   5.logarithmic moment of the energy distr. 
+c      eb6bl   6.logarithmic moment of the energy distr. 
+c
+c      pl1s    1.moment of the pathlength distribution 
+c      pl2s    2.moment of the pathlength distribution
+c      pl3s    3.moment of the pathlength distribution
+c      pl4s    4.moment of the pathlength distribution 
+c      pl5s    5.moment of the pathlength distribution
+c      pl6s    6.moment of the pathlength distribution
+c
+c
+c      transmitted projectiles
+c
+c      tn      particle transmission coefficient
+c      emeant  mean energy of transmitted projectiles
+c      tmeanr  relative mean energy of transmitted projectiles
+c      te      energy transmission coefficient
+c
+c      fit0    mean energy of transmitted projectiles
+c      set     variance
+c      tht     skewness
+c      fot     kurtosis
+c      sigmat  square root of the variance
+c      dfit0   error of mean
+c      dset    error of the variance
+c      dtht    error of the skewness
+c
+c      fipt0   mean pathlength of transmitted projectiles
+c      sept    variance
+c      tpht    skewness
+c      fpot    kurtosis
+c      sigmpt  square root of the variance
+c      dfipt0  error of mean
+c      dsept   error of the variance
+c      dthpt   error of the skewness
+c
+c      avnlt   mean elastic loss
+c      vanlt   variance of the elastic loss distribution
+c      signlt  square root of the variance
+c      dfinlt  error in the mean elastic loss
+c
+c      avilt   mean electronic loss
+c      vailt   variance of the electronic loss distribution
+c      sigilt  square root of the variance
+c      dfiilt  error in the mean electronic loss
+c
+c
+c      backsputtered target atoms (for each species j)
+c
+c      ispa       total sputtering yield
+c      espa       total sputtered energy
+c      ispal(i)   sputtering yield of layer i
+c      espal(i)   sputtered energy of layer i
+c      spy(j)     sputtering yield of species j
+c      spe(j)     sputtered energy of species j
+c      rey(j)     relative mean energy of sputtered target atoms
+c      emsp(j)    mean energy of sputtered target atoms
+c
+c      4 different processes for sputtering
+c      ispip(j)   number of primary knock-on atoms, ion in
+c      rip(j)     fraction of primary knock-on atoms, ion in
+c                 normalized to all sputtered atoms
+c      ripj(j)    fraction of primary knock-on
+c                 normalized to sputtered atoms of species j
+c      espip(j)   energy of primary knock-on atoms, ion in
+c      reip(j)    fraction of energy of primary knock-on atoms, ion in
+c                 normalized to energy of all sputtered atoms
+c      reipj(j)   fraction of energy of primary knock-on atoms, ion in
+c                 normalized to energy of sputtered atom species j
+c      espmip(j)  mean energy of process (pka, ion in)
+c      ispis(j)   number of secondary knock-on atoms, ion in
+c      ris(j)     fraction of secondary knock-on atoms, ion in
+c                 normalized to all sputtered atoms
+c      risj(j)    fraction of secondary knock-on atoms, ion in
+c                 normalized to sputtered atoms of species j
+c      espis(j)   energy of secondary knock-on atoms,ion in
+c      reis(j)    fraction of energy of secondary knock-on atoms, ion in
+c                 normalized to energy of all sputtered atoms
+c      reisj(j)   fraction of energy of secondary knock-on atoms, ion in
+c                 normalized to energy of sputtered atom species j
+c      espmis(j)  mean energy of process (ska, ion in)
+c      ispop(j)   number of primary knock-on atoms, ion out
+c      rop(j)     fraction of primary knock-on atoms, ion out
+c                 normalized to all sputtered atoms
+c      ropj(j)    fraction of primary knock-on atoms, ion out
+c                 normalized to sputtered atoms of species j
+c      espop(i)   energy of primary knock-on atoms, ion out
+c      reop(j)    fraction of energy of primary knock-on atoms, ion out
+c                 normalized to energy of all sputtered atoms
+c      reopj(j)   fraction of energy of primary knock-on atoms, ion out
+c                 normalized to energy of sputtered atom species j
+c      espmop(j)  mean energy of process (pka, ion out)
+c      ispos(j)   number of secondary knock-on atoms, ion out
+c      ros(j)     fraction of secondary knock-on atoms, ion out
+c                 normalized to all sputtered atoms
+c      rosj(j)    fraction of secondary knock-on atoms, ion out
+c                 normalized to sputtered atoms of species j
+c      espos(j)   energy of secondary knock-on atoms, ion out
+c      reos(j)    fraction of energy of secondary knock-on atoms, ion out
+c                 normalized to energy of all sputtered atoms
+c      reosj(j)   fraction of energy of secondary knock-on atoms, ion out
+c                 normalized to energy of sputtered atom species j
+c      espmos(j)  mean energy of process (ska, ion out)
+c
+c      fies0   mean energy of backsputtered target atoms
+c      sees    variance
+c      thes    skewness
+c      foes    kurtosis
+c      sigmes  square root of the variance
+c      dfies0  error of mean
+c      dsees   error of the variance
+c      dthes   error of the skewness
+c
+c      ebsp1   1.moment of the energy distribution
+c      ebsp2   2.moment of the energy distribution
+c      ebsp3   3.moment of the energy distribution
+c      ebsp4   4.moment of the energy distribution
+c      ebsp5   5.moment of the energy distribution 
+c      ebsp6   6.moment of the energy distribution
+c
+c      ebsp1l  1.logarithmic moment of the energy distribution
+c      ebsp2l  2.logarithmic moment of the energy distribution
+c      ebsp3l  3.logarithmic moment of the energy distribution
+c      ebsp4l  4.logarithmic moment of the energy distribution
+c      ebsp5l  5.logarithmic moment of the energy distribution
+c      ebsp6l  6.logarithmic moment of the energy distribution
+c
+c
+c      transmission sputtered target atoms (for each species j)
+c
+c      ispat      total sputtering yield
+c      espat      total sputtered energy
+c      ispalt(i)  sputtering yield of layer i
+c      espalt(i)  sputtered energy of layer i
+c      spyt(j)    sputtering yield of species j
+c      spet(j)    sputtered energy of species j
+c      reyt(j)    relative mean energy of sputtered target atoms
+c      emspt(j)   mean energy of sputtered target atoms
+c
+c      4 different processes for sputtering
+c      ispipt(j)  number of primary knock-on atoms, ion in
+c      ript(j)    fraction of primary knock-on atoms, ion in
+c                 normalized to all sputtered atoms
+c      espipt(j)  energy of primary knock-on atoms, ion in
+c      reipt(j)   fraction of energy of primary knock-on atoms, ion in
+c                 normalized to energy of all sputtered atoms
+c      espmipt(j) mean energy of process (pka, ion in)
+c      ispist(j)  number of secondary knock-on atoms, ion in
+c      rist(j)    fraction of secondary knock-on atoms, ion in
+c                 normalized to all sputtered atoms
+c      espist(j)  energy of secondary knock-on atoms,ion in
+c      reist(j)   fraction of energy of secondary knock-on atoms, ion in
+c                 normalized to energy of all sputtered atoms
+c      espmist(j) mean energy of process (ska, ion in)
+c      ispopt(j)  number of primary knock-on atoms, ion out
+c      ropt(j)    fraction of primary knock-on atoms, ion out
+c                 normalized to all sputtered atoms
+c      espopt(i)  energy of primary knock-on atoms, ion out
+c      reopt(j)   fraction of energy of primary knock-on atoms, ion out
+c                 normalized to energy of all sputtered atoms
+c      espmopt(j) mean energy of process (pka, ion out)
+c      ispost(j)  number of secondary knock-on atoms, ion out
+c      rost(j)    fraction of secondary knock-on atoms, ion out
+c                 normalized to all sputtered atoms
+c      espost(j)  energy of secondary knock-on atoms, ion out
+c      reost(j)   fraction of energy of secondary knock-on atoms, ion out
+c                 normalized to energy of all sputtered atoms
+c      espmost(j) mean energy of process (ska, ion out)
+c
+c
+c      angular distributions
+c
+c      a(i)        20 equal cosine intervals of the polar exit angle
+c      kadb(i)     number of reflected projectiles in interval i
+c      rkadb(i)    fraction of reflected projectiles in interval i
+c      kadt(i)     number of transmitted projectiles in interval i
+c      rkadt(i)    fraction of transmitted projectiles in interval i
+c      kads(i)     number of all sputtered target atoms in interval i
+c      rkads(i)    fraction of all sputtered target atoms in interval i
+c      kadsl(i,j)  number of sputtered atoms from layer j in interval i
+c      rkadsl(i,j) fraction of sputtered atoms from layer j in interval i
+c      kadsj(i,j)  number of sputtered species j in interval i
+c      rkadsj(i,j) fraction of sputtered species j in interval i
+c      kadst(i)    number of all transmission sputtered atoms in interval i
+c      rkadst(i)   fraction of all transm. sputtered atoms in interval i
+c      kdstl(i,j)  number of transm. sputtered atoms from layer j in interval i
+c      rkdslt(i,j) fraction of transm. sputtered atoms from layer j in interval i
+c      kdstj(i,j)  number of transm. sputtered species j in interval i
+c      rkdstj(i,j) fraction of transm. sputtered species j in interval i
+cc     kadrip(i)   number of sputtered primary knock-on atoms, ion in
+cc     rkdrip(i)   fraction of sputtered primary knock-on atoms, ion in
+cc     kadris(i)   number of sputtered secondary knock-on atoms, ion in
+cc     rkdris(i)   fraction of sputtered  secondary knock-on atoms, ion in
+cc     kadrop(i)   number of sputtered primary knock-on atoms, ion out
+cc     rkdrop(i)   fraction of sputtered primary knock-on atoms, ion out
+cc     kadros(i)   number of sputtered secondary knock-on atoms, ion out
+cc     rkdros(i)   fraction of sputtered secondary knock-on atoms, ion out
+c
+c
+c      2- and 3-dimensional distributions
+c
+c      the first row and the first column give the upper limit of
+c      the interval
+c      the last row gives the sum over the columns and
+c      the last column gives the sum over the rows
+c      the matrix-output is only given , if more than 10000 particles
+c      are sputtered, reflected or transmitted
+c
+c                     backsputtered target atoms
+c
+c      meas(i,j,k)    number of sputtered target atoms versus energy
+c                     (column) and polar emission angle (row)
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval j: cosine interval of 0.05,
+c                     20 intervals
+c                     10 target species k (2 layers)
+c                     in the last interval (99-100 ev) all sputtered
+c                     target atoms with energies above 100 ev are
+c                     included
+c                     dimension : meas(102,22,10)
+c
+c      mease(i,j,k)   number of sputtered target atoms versus energy
+c                     (column) and polar emission angle (row)
+c                     energy interval i: 1 ev , 100 intervals
+c                     polar angle interval j: cosine interval of 0.05,
+c                     20 intervals
+c                     10 target species k (2 layers)
+c                     in the last interval (99-100 ev) all sputtered
+c                     target atoms with energies above 100 ev are
+c                     included
+c                     dimension : meas(102,22,10)
+c
+c      magsa(i,j,k)   number of sputtered target atoms versus azimuthal
+c                     (column) and polar (row) emission angles
+c                     azimuthal angle interval i: 3 deg, 60 intervals
+c                     polar angle interval j: 3 deg, 30 intervals
+c                     10 target species k (2 layers)
+c                     dimension : magsa(62,32,10)	
+c
+c      measl(i,j,k)   number of sputtered target atoms versus energy
+c                     (column) and polar emission angle (row)
+c                     energy interval i: a decade is divided into 12
+c                     equal logarithmic intervals from 0.1 to 10**5 ev
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     10 target species k (2 layers)
+c                     the last column gives the number of sputtered
+c                     atoms per ev, solid angle, and projectile
+c                     dimension : measl(75,21,10)
+c
+c      easl(i,j)      logarithmic energy distribution (intensity per 
+c                     logarithmic energy interval)
+c                     energy interval i: a decade is divided into 12 
+c                     equal logarithmic intervals from 0.1 to 10**5 ev 
+c                     10 target species j (2 layers) 
+c                     dimension : easl(75,10) 
+c               
+c      meags(i,j,k,l) number of sputtered target atoms versus energy
+c                     (column), polar (row) and azimuthal (matrix)
+c                     emission angles
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval k: cosine interval of 0.05,
+c                     20 intervals
+c                     azimuthal angle interval j: 15 deg, 12 matrices
+c                     10 target species l (2 layers)
+c                     these matrices are not calculated, if the angle
+c                     of incidence, alpha, is smaller than 1 deg
+c                     dimension : meags(102,12,22,10)
+c
+c      mags(i,j,k)    number of sputtered target atoms versus azimu-
+c                     thal (column) and polar (row) emission angles
+c                     dimension : mags(62,22,10)
+c
+c                     transmission sputtered target atoms
+c
+c      meast(i,j,k)   number of sputtered target atoms versus energy
+c                     (column) and polar emission angle (row)
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval j: cosine interval of 0.05,
+c                     20 intervals
+c                     10 target species k (2 layers)
+c                     in the last interval (99-100 ev) all sputtered
+c                     target atoms with energies above 100 ev are
+c                     included
+c                     dimension : meast(102,22,10)
+c
+c      meastl(i,j,k)  number of sputtered target atoms versus energy
+c                     (column) and polar emission angle (row)
+c                     energy interval i: a decade is divided into 12
+c                     equal logarithmic intervals from 0.1 to 10**5 ev
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     10 target species k (2 layers)
+c                     the last column gives the number of sputtered
+c                     atoms per ev, solid angle, and projectile
+c                     dimension : meastl(75,21,10)
+c
+c      eastl(i,j)     logarithmic energy distribution (intensity per
+c                     logarithmic energy interval)
+c                     energy interval i: a decade is divided into 12
+c                     equal logarithmic intervals from 0.1 to 10**5 ev
+c                     10 target species j (2 layers)
+c                     dimension : eastl(75,10)
+c
+c      magst(i,j,k)   number of sputtered target atoms versus azimu-
+c                     thal (column) and polar (row) emission angles
+c                     dimension : magst(62,22,10)
+c
+c                     backscattered projectiles
+c 
+c      meab(i,j)      number of backscattered projectiles versus
+c                     energy (column) and polar emission angle (row)
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval j: cosine interval of 0.05,
+c                     20 intervals
+c                     dimension : meab(102,22)
+c
+c      meabl(i,k)     number of backscattered projectiles versus
+c                     energy (column) and polar emission angle (row)
+c                     energy interval i: a decade is divided into 12
+c                     equal logarithmic intervals from 0.1 to 10**5 ev
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     dimension : meabl(75,21)
+c
+c      meagb(i,j,k)   number of backscattered projectiles versus
+c                     energy (column), polar (row) and azimuthal
+c                     (matrix) emission angles
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval k: cosine interval of 0.05,
+c                     20 intervals
+c                     azimuthal angle interval j: 15 deg, 12 matrices
+c                     10 target species l (2 layers)
+c                     these matrices are not calculated, if the angle
+c                     of incidence, alpha, is smaller than 1 deg
+c                     dimension : meagb(102,12,22)
+c
+c      magb(i,j)      number of backscattered projectiles versus
+c                     azimuthal (column) and polar (row) emission
+c                     angles
+c                     azimuthal angle interval i: 3 deg, 60 intervals
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     dimension : magb(62,22)
+c
+c      ema(i,j)       backscattered energy versus azimuthal (column)
+c                     and polar (row) emission angles
+c                     azimuthal angle interval i: 3 deg, 60 intervals
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     dimension : ema(62,22)
+c
+c      mepb(i,j)      number of backscattered projectiles versus
+c                     energy (column) and pathlength (row)
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     pathlength interval j: cw , 100 intervals
+c                     dimension : mepb(102,102)
+c
+c                     transmitted projectiles
+c
+c      meat(i,j)      number of transmitted projectiles versus
+c                     energy (column) and polar emission angle (row)
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval j: cosine interval of 0.05,
+c                     20 intervals
+c                     dimension : meat(102,22)
+c
+c      meatl(i,k)     number of transmitted projectiles versus
+c                     energy (column) and polar emission angle (row)
+c                     energy interval i: a decade is divided into 12
+c                     equal logarithmic intervals from 0.1 to 10**5 ev
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     dimension : meatl(75,21)
+c
+c      meatb(i,j,k)   number of transmitted projectiles versus
+c                     energy (column), polar (row) and azimuthal
+c                     (matrix) emission angles
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     polar angle interval k: cosine interval of 0.05,
+c                     20 intervals
+c                     azimuthal angle interval j: 15 deg, 12 matrices
+c                     10 target species l (2 layers)
+c                     these matrices are not calculated, if the angle
+c                     of incidence, alpha, is smaller than 1 deg
+c                     dimension : meatb(102,12,22)
+c
+c      magt(i,j)      number of transmitted projectiles versus
+c                     azimuthal (column) and polar (row) emission
+c                     angles
+c                     azimuthal angle interval i: 3 deg, 60 intervals
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     dimension : magt(62,22)
+c
+c      emat(i,j)      transmitted energy versus azimuthal (column)
+c                     and polar (row) emission angles
+c                     azimuthal angle interval i: 3 deg, 60 intervals
+c                     polar angle interval j: cosine intervals of 0.05,
+c                     20 intervals
+c                     dimension : emat(62,22)
+c
+c      mept(i,j)      number of transmitted projectiles versus
+c                     energy (column) and pathlength (row)
+c                     energy interval i: 1% of the projectile energy e0,
+c                     100 intervals
+c                     pathlength interval j: cw , 100 intervals
+c                     dimension : mept(102,102)
+c
+c  
+c      remarks
+c      the matrix output is in most cases only reasonable for a large
+c      number of histories (nh.gt.10**5)
+c
+c
+c      data on disc (fort.17) , unformatted
+c
+c      z1,m1,e0,alpha,ef,esb,sheath
+c      ,nh,ri,x0,rd,cw,ca,kk0,kk0r,kdee1,kdee2
+c      (dx(i),i=1,3),(rho(i),i=1,3),(ck(i),i=1,3)
+c      ,((zt(i,j),j=1,5),i=1,3),((mt(i,j),j=1,5),i=1,3)
+c      ,((co(i,j),j=1,5),i=1,3),((sbe(i,j),j=1,5),i=1,3)
+c      ,((ed(i,j),j=1,5),i=1,3),((be(i,j),j=1,5),i=1,3)
+c      ti,zarg,velc
+c      ,hlm,hlmt,su,sut,xc,rt,inel,l,lj
+c      ,nproj,kib,kit,maxa,nall,npa,nsa,kis,kist
+c      ,iim,eim,ib,eb,it,et,ispa,espa,ispat,espat
+c      ,fix0,sex,thx,fox,sigmax,dfix0,dsex,dthx
+c      ,fir0,ser,thr,for,sigmar,dfir0,dser,dthr
+c      ,fip0,sep,thp,fop,sigmap,dfip0,dsep,dthp
+c      ,avnli,vanli,signli,dfinli
+c      ,avili,vaili,sigili,dfiili
+c      avcsum,avcdis
+c      ,fie0,see,the,foe,sigmae,dfie0,dsee,dthe
+c      ,fiw0,sew,thw,fow,sigmaw,dfiw0,dsew,dthw
+c      ,fii0,sei,thi,foi,sigmai,dfii0,dsei,dthi
+c      ,fis0,ses,ths,fos,sigmas,dfis0,dses,dths
+c      ,iirp,trirp,iipl,tion,tdmgn,tcasmo,tphon,tdent
+c      rn,re,emeanr,emean,tn,te,tmeanr,emeant
+c      ,fib0,seb,thb,fob,sigmab,dfib0,dseb,dthb
+c      ,fipb0,sepb,thpb,fopb,sigmpb,dfipb0,dsepb,dthpb
+c      ,avnlb,vanlb,signlb,dfinlb
+c      ,avilb,vailb,sigilb,dfiilb
+c      fit0,set,tht,fot,sigmat,dfit0,dset,dtht
+c      ,fipt0,sept,thpt,fopt,sigmpt,dfipt0,dsept,dthpt
+c      ,avnlt,vanlt,signlt,dfinlt
+c      ,avilt,vailt,sigilt,dfiilt
+c      (irp(i),i=0,100),(rirp(i),i=0,100)
+c      ,(ipl(i),i=1,100),(ion(i),i=1,100),(dmgn(i),i=1,100)
+c      ,(casmot(i),i=1,100),(phon(i),i=1,100),(dent(i),i=1,100)
+c      (fiesb(j),j=1,10),(seesb(j),j=1,10),(thesb(j),j=1,10)
+c      ,(foesb(j),j=1,10),(sgmesb(j),j=1,10)
+c      ,(dfiesb(j),j=1,10),(dseesb(j),j=1,10)
+c      ,(dthesb(j),j=1,10)
+c      ((ele(i,j),j=1,15),i=1,100),((eli(i,j),j=1,15),i=1,100)
+c      ,((elp(i,j),j=1,15),i=1,100)
+c      ,(elet(j),j=1,15),(elit(j),j=1,15),(elpt(j),j=1,15)
+c      (ai(i),i=1,20),(kadb(i),i=1,20),(kadt(i),i=1,20)
+c      ,(rkadb(i),i=1,20),(rkadt(i),i=1,20)
+c      (kads(i),i=1,20),(kadst(i),i=1,20)
+c      ,(rkads(i),i=1,20),(rkadst(i),i=1,20)
+c      ((kadrip(i,j),j=1,10),i=1,20)
+c      ,((kadris(i,j),j=1,10),i=1,20)
+c      ,((kadrop(i,j),j=1,10),i=1,20)
+c      ,((kadros(i,j),j=1,10),i=1,20)
+c      ((KAdsj(i,j),j=1,10),i=1,20)
+c      ,((rkadsj(i,j),j=1,10),i=1,20)
+c      ,((kadsl(i,j),j=1,2),i=1,20)
+c      ,((kkadsl(i,j),j=1,2),i=1,20)
+c      ((kdstj(i,j),j=1,10),i=1,20)
+c      ,((rkdstj(i,j),j=1,10),i=1,20)
+c      ,((kdstl(i,j),j=1,2),i=1,20)
+c      ,((rkdstl(i,j),j=1,2),i=1,20)
+c      (ibsp(i),i=1,15),(ebsp(i),i=1,15)
+c      ,(spy(i),i=1,15),(spe(i),i=1,15)
+c      ,(rey(i),i=1,15),(emsp(i),i=1,15)
+c      ,(ispal(i),i=1,3),(espal(i),i=1,3)
+c      (ispip(i),i=1,15),(ispis(i),i=1,15)
+c      ,(ispop(i),i=1,15),(ispos(i),i=1,15)
+c      ,(espip(i),i=1,15),(espis(i),i=1,15)
+c      ,(espop(i),i=1,15),(espos(i),i=1,15)
+c      ,(rip(i),i=1,15),(ris(i),i=1,15)
+c      ,(rop(i),i=1,15),(ros(i),i=1,15)
+c      ,(reip(i),i=1,15),(reis(i),i=1,15)
+c      ,(reop(i),i=1,15),(reos(i),i=1,15)
+c      (itsp(i),i=1,15),(etsp(i),i=1,15)
+c      ,(spyt(i),i=1,15),(spet(i),i=1,15)
+c      ,(reyt(i),i=1,15),(emspt(i),i=1,15)
+c      ,(ispalt(i),i=1,3),(espalt(i),i=1,3)
+c      (ispipt(i),i=1,15),(ispist(i),i=1,15)
+c      ,(ispopt(i),i=1,15),(ispost(i),i=1,15)
+c      ,(espipt(i),i=1,15),(espist(i),i=1,15)
+c      ,(espopt(i),i=1,15),(espost(i),i=1,15)
+c      ,(ript(i),i=1,15),(rist(i),i=1,15)
+c      ,(ropt(i),i=1,15),(rost(i),i=1,15)
+c      ,(reipt(i),i=1,15),(reist(i),i=1,15)
+c      ,(reopt(i),i=1,15),(reost(i),i=1,15)
+c      ((meab(i,j),j=1,22),i=1,102)
+c      ,((magb(i,j),j=1,22),i=1,62)
+c      ,(((meagb(i,j,k),k=1,22),j=1,36),i=1,102)
+c      ,((ema(i,j),j=1,22),i=1,62),(elog(i),i=1,75)
+c      ,(eabl(i),i=1,75),((meabl(i,j),j=1,21),i=1,75)
+c      ,((mepb(i,j),j=1,102),i=1,102)
+c      ((meat(i,j),j=1,22),i=1,102)
+c      ,((magt(i,j),j=1,22),i=1,62)
+c      ,(((meagt(i,j,k),k=1,22),j=1,36),i=1,102)
+c      ,((emat(i,j),j=1,22),i=1,62)
+c      ,(eatl(i),i=1,75),((meatl(i,j),j=1,21),i=1,75)
+c      ,((mept(i,j),j=1,102),i=1,102)
+c      (((meas(i,j,k),k=1,10),j=1,22),i=1,102)
+c      ,(((mags(i,j,k),k=1,10),j=1,22),i=1,62)
+c      ,((easl(i,j),j=1,10),i=1,75)
+c      ,(((measl(i,j,k),k=1,10),j=1,21),i=1,75)
+c      (((meast(i,j,k),k=1,10),j=1,22),i=1,102)
+c      ,(((magst(i,j,k),k=1,10),j=1,22),i=1,62)
+c      ,((eastl(i,j),j=1,10),i=1,75)
+c      ,(((meastl(i,j,k),k=1,10),j=1,21),i=1,75)
+c      ((((meags(i,j,k,mn),mn=1,10),k=1,22),j=1,12),i=1,102)
+c      ,(((magsa(i,j,k),k=1,10),j=1,32),i=1,62)
+CC     ,((((MEAGST(I,J,K,L),L=1,10),K=1,22),J=1,36),I=1,102)
+c      ((eld(i,j),i=1,100),j=1,15)
+c      xsum,x2sum,x3sum,x4sum,x5sum,x6sum
+c      eb,eb2sum,eb3sum,eb4sum,eb5sum,eb6sum
+c      ,eb1sul,eb2sul,eb3sul,eb4sul,eb5sul,eb6sul
+c      (ebsp(j),j=1,15),(spe2s(j),j=1,15),(spe3s(j),j=1,15)
+c      ,(spe4s(j),j=1,15),(spe5s(j),j=1,15),(spe6s(j),j=1,15)
+c      (spe1sl(j),j=1,15),(spe2sl(j),j=1,15),(spe3sl(j),j=1,15)
+c      ,(spe4sl(j),j=1,15),(spe5sl(j),j=1,15)
+c      ,(spe6sl(j),j=1,15)
+c      ((icd(i,j),j=1,15),i=1,100),((icdr(i,j),j=1,15),i=1,100)
+c      (((icdiri(i,j,k),k=1,15),j=1,15),i=1,100)
+c      ,((icdirn(i,j),j=1,15),i=1,100)
+c      exi1s,exi2s,exi3s,exi4s,exi5s,exi6s
+c      ,coss1s,coss2s,coss3s,coss4s,coss5s,coss6s
+c      ibl,(ibsp(i),i=1,15)
+
