@@ -457,13 +457,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.587117in}{5.531560in}}%
 \pgfpathlineto{\pgfqpoint{0.792365in}{5.531560in}}%
@@ -474,7 +474,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=0.601006in,y=5.668132in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -625,7 +625,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.737631in,y=6.654889in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=0.737631in,y=6.654889in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -969,13 +969,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.163561in}{5.531560in}}%
 \pgfpathlineto{\pgfqpoint{2.368808in}{5.531560in}}%
@@ -986,7 +986,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=2.177450in,y=5.668132in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -1137,7 +1137,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.314075in,y=6.654889in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=2.314075in,y=6.654889in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -1481,13 +1481,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.740004in}{5.531560in}}%
 \pgfpathlineto{\pgfqpoint{3.945252in}{5.531560in}}%
@@ -1498,7 +1498,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=3.753893in,y=5.668132in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -1649,7 +1649,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.890518in,y=6.654889in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=3.890518in,y=6.654889in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -2011,13 +2011,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.587117in}{3.965287in}}%
 \pgfpathlineto{\pgfqpoint{0.792365in}{3.965287in}}%
@@ -2028,7 +2028,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=0.601006in,y=4.101859in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -2179,7 +2179,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.737631in,y=5.088616in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=0.737631in,y=5.088616in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -2523,13 +2523,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.163561in}{3.965287in}}%
 \pgfpathlineto{\pgfqpoint{2.368808in}{3.965287in}}%
@@ -2540,7 +2540,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=2.177450in,y=4.101859in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -2691,7 +2691,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.314075in,y=5.088616in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=2.314075in,y=5.088616in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -3035,13 +3035,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.740004in}{3.965287in}}%
 \pgfpathlineto{\pgfqpoint{3.945252in}{3.965287in}}%
@@ -3052,7 +3052,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=3.753893in,y=4.101859in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -3203,7 +3203,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.890518in,y=5.088616in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=3.890518in,y=5.088616in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -3565,13 +3565,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.587117in}{2.399014in}}%
 \pgfpathlineto{\pgfqpoint{0.792365in}{2.399014in}}%
@@ -3582,7 +3582,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=0.601006in,y=2.535586in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -3807,7 +3807,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.737631in,y=3.522343in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=0.737631in,y=3.522343in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -4151,13 +4151,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.163561in}{2.399014in}}%
 \pgfpathlineto{\pgfqpoint{2.368808in}{2.399014in}}%
@@ -4168,7 +4168,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=2.177450in,y=2.535586in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -4393,7 +4393,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.314075in,y=3.522343in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=2.314075in,y=3.522343in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -4737,13 +4737,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.740004in}{2.399014in}}%
 \pgfpathlineto{\pgfqpoint{3.945252in}{2.399014in}}%
@@ -4754,7 +4754,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=3.753893in,y=2.535586in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -4979,7 +4979,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.890518in,y=3.522343in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=3.890518in,y=3.522343in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -5359,13 +5359,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.587117in}{0.832741in}}%
 \pgfpathlineto{\pgfqpoint{0.792365in}{0.832741in}}%
@@ -5376,7 +5376,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=0.601006in,y=0.969313in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -5527,7 +5527,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.737631in,y=1.956070in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=0.737631in,y=1.956070in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -5889,13 +5889,13 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
-\definecolor{currentfill}{rgb}{0.000000,0.000000,0.000000}%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.163561in}{0.832741in}}%
 \pgfpathlineto{\pgfqpoint{2.368808in}{0.832741in}}%
@@ -5906,7 +5906,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\definecolor{textcolor}{rgb}{1.000000,1.000000,1.000000}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=2.177450in,y=0.969313in,left,top]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\times8$}}%
@@ -6057,7 +6057,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.314075in,y=1.956070in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{1pt}{black}{0.25pt}{2}{40}] (0.2,0) -- (0.8,0);\end{tikzpicture}}}}%
+\pgftext[x=2.314075in,y=1.956070in,,]{\color{textcolor}{\rmfamily\fontsize{12.000000}{14.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\mbox{\begin{tikzpicture}[baseline=-0.6ex]\draw[outlinedArrow={white}{2pt}{black}{0.5pt}{1}{40}] (0.2,0) -- (1.2,0);\end{tikzpicture}}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
@@ -6121,11 +6121,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.722530in}{5.248402in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{5.248402in}}%
@@ -6170,11 +6170,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{5.862074in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{5.862074in}}%
@@ -6219,11 +6219,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{6.501421in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{6.501421in}}%
@@ -6305,11 +6305,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.298973in}{5.248402in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{5.248402in}}%
@@ -6354,11 +6354,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{5.817129in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{5.817129in}}%
@@ -6403,11 +6403,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{6.501421in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{6.501421in}}%
@@ -6489,11 +6489,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.875417in}{5.248402in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{5.248402in}}%
@@ -6538,11 +6538,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.929815in}{5.802271in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{5.802271in}}%
@@ -6587,11 +6587,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.929815in}{6.501421in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{6.501421in}}%
@@ -6673,11 +6673,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.722530in}{3.682129in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{3.682129in}}%
@@ -6722,11 +6722,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{4.215568in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{4.215568in}}%
@@ -6771,11 +6771,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{4.935148in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{4.935148in}}%
@@ -6857,11 +6857,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.298973in}{3.682129in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{3.682129in}}%
@@ -6906,11 +6906,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{4.272584in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{4.272584in}}%
@@ -6955,11 +6955,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{4.935148in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{4.935148in}}%
@@ -7041,11 +7041,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.875417in}{3.682129in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{3.682129in}}%
@@ -7090,11 +7090,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.929815in}{4.256163in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{4.256163in}}%
@@ -7139,11 +7139,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.929815in}{4.935148in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{4.935148in}}%
@@ -7225,11 +7225,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.722530in}{2.115856in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{2.115856in}}%
@@ -7274,11 +7274,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{2.759557in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{2.759557in}}%
@@ -7323,11 +7323,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{3.368875in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{3.368875in}}%
@@ -7409,11 +7409,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.298973in}{2.115856in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{2.115856in}}%
@@ -7458,11 +7458,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{2.805180in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{2.805180in}}%
@@ -7507,11 +7507,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{3.368875in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{3.368875in}}%
@@ -7593,11 +7593,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.793820in}{2.115856in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{2.115856in}}%
@@ -7642,11 +7642,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.929815in}{2.837963in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{2.837963in}}%
@@ -7691,11 +7691,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{4.848218in}{3.368875in}}%
 \pgfpathlineto{\pgfqpoint{5.138342in}{3.368875in}}%
@@ -7777,11 +7777,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.640933in}{0.549583in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{0.549583in}}%
@@ -7826,11 +7826,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.776928in}{1.186787in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{1.186787in}}%
@@ -7875,11 +7875,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.695331in}{1.802602in}}%
 \pgfpathlineto{\pgfqpoint{1.985455in}{1.802602in}}%
@@ -7961,11 +7961,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.298973in}{0.549583in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{0.549583in}}%
@@ -8010,11 +8010,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{0.938031in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{0.938031in}}%
@@ -8059,11 +8059,11 @@
 \pgfsetmiterjoin%
 \definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
 \pgfsetfillcolor{currentfill}%
-\pgfsetfillopacity{0.500000}%
+\pgfsetfillopacity{0.850000}%
 \pgfsetlinewidth{0.000000pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
-\pgfsetstrokeopacity{0.500000}%
+\pgfsetstrokeopacity{0.850000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{3.353371in}{1.802602in}}%
 \pgfpathlineto{\pgfqpoint{3.561899in}{1.802602in}}%

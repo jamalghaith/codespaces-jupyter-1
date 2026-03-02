@@ -1,4 +1,10 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+    "chat.tools.terminal.autoApprove": {
+        "/^cd \"/workspaces/codespaces-jupyter/Report 1\" && python3 -c \"\nimport json\nwith open\\('Analysis\\.ipynb', 'r'\\) as f:\n    nb = json\\.load\\(f\\)\nfor i, cell in enumerate\\(nb\\['cells'\\]\\):\n    src = ''\\.join\\(cell\\['source'\\]\\)\n    if 'plot_histograms_grid' in src:\n        print\\('Found at cell', i\\)\n        break\nelse:\n    print\\('Not found'\\)\n\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }
