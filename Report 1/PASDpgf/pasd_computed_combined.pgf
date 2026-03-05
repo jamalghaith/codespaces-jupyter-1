@@ -3686,10 +3686,6 @@
 \pgfsys@transformshift{4.308660in}{1.984289in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
-\begin{pgfscope}%
-\pgfsys@transformshift{4.909672in}{1.447794in}%
-\pgfsys@useobject{currentmarker}{}%
-\end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.707242in}{0.533473in}}{\pgfqpoint{5.152221in}{2.572392in}}%
@@ -3992,12 +3988,6 @@
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
 \pgftext[x=4.419771in,y=1.984289in,left,]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\qty{42.0}{\mu\meter^{-1}} / \qty{24}{\nano\meter}}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.839216,0.152941,0.156863}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=5.090228in,y=1.558905in,,bottom]{\color{textcolor}{\rmfamily\fontsize{10.000000}{12.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}\qty{79.4}{\mu\meter^{-1}} / \qty{13}{\nano\meter}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.890196,0.466667,0.760784}%
